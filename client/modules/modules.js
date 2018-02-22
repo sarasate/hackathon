@@ -41,8 +41,11 @@ Template.modules.events({
 	'click .module-selected-button': function(event) {
 		event.preventDefault();
 		$('.waiting-for-other-party').addClass('show');
-		// const thisCase = Session.get('case');
-		// const thisUser = Session.get('user');
-		// FlowRouter.go('/modules/' + thisCase + '/' + thisUser);
+		const thisCase = Session.get('case');
+		const thisUser = Session.get('user');
+		setTimeout(function() {
+					FlowRouter.go('/questionnaire/' + thisCase + '/' + thisUser);
+		}, 10000);
+
 	}
 })
