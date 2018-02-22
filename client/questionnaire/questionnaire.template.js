@@ -7,3 +7,4 @@ Template.questionnaire.helpers({
     return Questions.find().fetch();
   }
 });
+
