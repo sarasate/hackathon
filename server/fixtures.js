@@ -10,6 +10,15 @@ const runFixtures = function() {
       template: "DIVORCE"
     }
   );
+
+  Cases.upsert(
+    { _id: "DQiwKn" },
+    {
+      user1: "Jane",
+      user2: "John",
+      template: "DIVORCE"
+    }
+  );
 };
 
 Meteor.startup(() => {
