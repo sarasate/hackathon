@@ -17,7 +17,6 @@ msavin:mongol
 
 random@1.0.10
 velocityjs:velocityjs
-mrt:moment
 
 standard-minifier-js@2.3.1    # JS minifier run for production mode
 seba:minifiers-autoprefixer
