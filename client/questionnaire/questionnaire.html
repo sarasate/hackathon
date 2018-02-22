@@ -9,11 +9,22 @@
       </div>
       {{#if range}}
       <form class="invite-form">
-        <input type="text" class="input questionnaire-input" placeholder="Bitte Wert eingeben">
+        <input type="number" class="input questionnaire-input" placeholder="Bitte Wert eingeben">
       </form>
       {{else}}
-        xxx
-    
+      <div class="thumbs-container">
+        <button class="thumbs-up thumbs-icon">
+          <img src="/up.svg" alt="">
+        </button>
+
+        <button class="thumbs-down thumbs-icon">
+          <i class="icon">
+            <img src="/down.svg" alt="">
+          </i>
+        </button>
+
+      </div>
+
       {{/if}}
       <div class="navigation-buttons">
         <button class="previous-question">previous</button>
@@ -22,9 +33,9 @@
 
     </div>
     <div class="finish-questionnaire-modal">
-        [Text - Fragenkatalog fertig - weiter zum Bewerten]
-        <button class="continue-to-scoring">Proceed</button>
-      </div>
+      [Text - Fragenkatalog fertig - weiter zum Bewerten]
+      <button class="continue-to-scoring">Proceed</button>
+    </div>
 
 
 
