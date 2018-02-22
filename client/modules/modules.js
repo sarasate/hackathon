@@ -30,7 +30,19 @@ Template.modules.helpers({
 	modules: () => {
 		return modules;
 	}
-		
 	
-
 });
+
+Template.modules.events({
+	'click .module-item': function (event) {
+		console.log('check')
+		$(event.target).toggleClass('selected');
+	},
+	'click .module-selected-button': function(event) {
+		event.preventDefault();
+		$('.please-wait-modal').addClass('show');
+		// const thisCase = Session.get('case');
+		// const thisUser = Session.get('user');
+		// FlowRouter.go('/modules/' + thisCase + '/' + thisUser);
+	}
+})

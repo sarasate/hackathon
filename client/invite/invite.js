@@ -3,7 +3,6 @@ Template.invite.events({
 		event.preventDefault();
 		const thisCase = Session.get('case');
 		const thisUser = Session.get('user');
-		console.log(thisUser);
 		FlowRouter.go('/modules/' + thisCase + '/' + thisUser);
 	}
 });

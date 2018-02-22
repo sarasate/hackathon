@@ -1,25 +1,33 @@
-<template name="Modules">
-    <div id="modules-container">
+<template name="modules">
+	<div id="modules-container">
 
-        <div class="modules-select-text">
-            Bitte wählen Sie die Themen aus, über die Sie verhandeln möchten.
-        </div>
-        <div class="modules-list">
+		<div class="modules-select-text">
+			Bitte wählen Sie die Themen aus, über die Sie verhandeln möchten.
+		</div>
+		<div class="modules-list">
 
-            {{#each modules}}
+			{{#each modules}}
 
-            <div class="module-item">
-                <div class="module-name">
-                    {{name}}
-                </div>
-                <div class="module-description">
-                    {{description}}
-                </div>
+			<div class="module-item">
+				<div class="module-name">
+					{{name}}
+				</div>
+				<div class="module-description">
+					{{description}}
+				</div>
 
-            </div>
+			</div>
 
-            {{/each}}
+			{{/each}}
 
-        </div>
-    </div>
+		</div>
+		<button class="module-selected-button">Auswahl bestätigen</button>
+		<div class="please-wait-modal">
+
+			<div class="waiting-for-other-party">
+				Please wait until the other party is ready.
+			</div>
+
+		</div>
+	</div>
 </template>
