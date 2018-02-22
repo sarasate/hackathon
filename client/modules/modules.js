@@ -1,27 +1,27 @@
 const modules = [
-	{name: "Modul 1",
-	description: "Lorem ipsum" 
+	{name: "Testamentary Dispute Settlement",
+	description: "Description of module" 
 	},
-	{name: "Modul 2",
-	description: "Lorem ipsum" 
+	{name: "Divorce Settlement",
+	description: "Description of module" 
 	},
-	{name: "Modul 3",
-	description: "Lorem ipsum" 
+	{name: "Term Sheet (M&A)",
+	description: "Description of module" 
 	},
-	{name: "Modul 4",
-	description: "Lorem ipsum" 
+	{name: "Investment Agreement",
+	description: "Description of module" 
 	},
-	{name: "Modul 5",
-	description: "Lorem ipsum" 
+	{name: "Nondisclosure Agreement",
+	description: "Description of module" 
 	},
-	{name: "Modul 6",
-	description: "Lorem ipsum" 
+	{name: "Domain Purchase Agreement",
+	description: "Description of module" 
 	},
-	{name: "Modul 7",
-	description: "Lorem ipsum" 
-	},
-	{name: "Modul 8",
-	description: "Lorem ipsum" 
+	{name: "Traffic Accident Litigation",
+	description: "Description of module" 
+	}, 
+	{name: "Hunting agreement",
+	description: "Description of module" 
 	}
 ]
 
