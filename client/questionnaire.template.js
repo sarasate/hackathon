@@ -1,8 +1,8 @@
 import { Template } from "meteor/templating";
 
-Template.Questionnaire.onCreated(function() {});
+Template.questionnaire.onCreated(function() {});
 
-Template.Questionnaire.helpers({
+Template.questionnaire.helpers({
   questions: () => {
     return Questions.find().fetch();
   }

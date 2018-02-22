@@ -40,7 +40,7 @@ Template.modules.events({
 	},
 	'click .module-selected-button': function(event) {
 		event.preventDefault();
-		$('.please-wait-modal').addClass('show');
+		$('.waiting-for-other-party').addClass('show');
 		// const thisCase = Session.get('case');
 		// const thisUser = Session.get('user');
 		// FlowRouter.go('/modules/' + thisCase + '/' + thisUser);

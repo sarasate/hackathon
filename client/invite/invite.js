@@ -8,8 +8,8 @@ Template.invite.events({
 });
 
 Template.layout.onRendered(function() {
-	const thisCase = FlowRouter.getParam('case');
-	const thisUser = FlowRouter.getParam('user');
-	Session.set('user', thisUser);
-	Session.set('case', thisCase);
+  const thisCase = FlowRouter.getParam("case");
+  const thisUser = FlowRouter.getParam("user");
+  Session.set("user", thisUser);
+  Session.set("case", thisCase);
 });
