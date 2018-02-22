@@ -1,26 +1,26 @@
 const modules = [
-	{name: "Testamentary Dispute Settlement",
+	{name: "Child Support",
 	description: "Description of module" 
 	},
-	{name: "Divorce Settlement",
+	{name: "Spousel Support",
 	description: "Description of module" 
 	},
-	{name: "Term Sheet (M&A)",
+	{name: "Division Of Property",
 	description: "Description of module" 
 	},
-	{name: "Investment Agreement",
+	{name: "Marital Home",
 	description: "Description of module" 
 	},
-	{name: "Nondisclosure Agreement",
+	{name: "Household Effects",
 	description: "Description of module" 
 	},
-	{name: "Domain Purchase Agreement",
+	{name: "Equalization Of Surplus",
 	description: "Description of module" 
 	},
-	{name: "Traffic Accident Litigation",
+	{name: "Pension Rights Adjustment",
 	description: "Description of module" 
 	}, 
-	{name: "Hunting agreement",
+	{name: "Last Will",
 	description: "Description of module" 
 	}
 ]
