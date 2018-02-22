@@ -1,21 +1,16 @@
-
 <template name="layout">
-  {{> Template.dynamic template=top}}
-  {{> Template.dynamic template=main}}
+  <div id="fullscreen_container">
+    {{> topbar}} {{> Template.dynamic template=top}} {{> Template.dynamic template=main}}
+  </div>
 </template>
 
 <template name="header">
-  
+
 </template>
 
-<template name="index">
-  <div id="fullscreen_container">
-      {{> invite}}
+<template name="topbar">
+  <div id="topbar">
+    Sondir.ai
   </div>
-
 </template>
 
-<template name="invite">
-  Invite
-  {{> Test}}
-</template>

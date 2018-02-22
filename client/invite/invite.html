@@ -1,0 +1,29 @@
+<template name="invite">
+
+
+	{{> inviteform}}
+
+
+</template>
+
+<template name="inviteform">
+	<div class="invite-form-container">
+			<div class="selected-template-text">
+					Sie haben folgendes Verhandlungstemplate gewählt:<br>
+				</div>
+				<div class="template-name">
+						<strong>Einigung bei Ehescheidung</strong>
+				</div>
+			<div class="invite-input-text">
+					Bitte geben Sie die E-Mail-Adresse an, an die Sie eine Einladung versenden möchten!
+				</div>
+
+		<form class="invite-form">
+			<input type="email" class="input email-input" placeholder="E-Mail-Adresse">
+			<button class="button email-submit-button">
+				Einladung senden
+			</button>
+		</form>
+	</div>
+
+</template>

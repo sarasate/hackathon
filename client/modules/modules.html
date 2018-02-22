@@ -1,0 +1,25 @@
+<template name="modules">
+    <div id="modules-container">
+
+        <div class="modules-select-text">
+            Bitte wählen Sie die Themen aus, über die Sie verhandeln möchten.
+        </div>
+        <div class="modules-list">
+
+            {{#each modules}}
+
+            <div class="module-item">
+                <div class="module-name">
+                    {{name}}
+                </div>
+                <div class="module-description">
+                    {{description}}
+                </div>
+
+            </div>
+
+            {{/each}}
+
+        </div>
+    </div>
+</template>

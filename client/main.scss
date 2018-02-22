@@ -1,14 +1,130 @@
-html, body, #__blaze-root {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Pacifico');@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,700');
+
+html,
+body,
+#__blaze-root {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
     font-size: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 #fullscreen_container {
-    background-color: red;
-    height: 100%;
-    width: 100%;
+    position: relative;
+	height: 100%;
+	width: 100%;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b885f7+0,759df9+100 */
+	background: #b885f7; /* Old browsers */
+	background: -moz-linear-gradient(
+		-45deg,
+		#b885f7 0%,
+		#759df9 100%
+	); /* FF3.6-15 */
+	background: -webkit-linear-gradient(
+		-45deg,
+		#b885f7 0%,
+		#759df9 100%
+	); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(
+		135deg,
+		#b885f7 0%,
+		#759df9 100%
+	); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(
+			startColorstr='#b885f7',
+			endColorstr='#759df9',
+			GradientType=1
+		); /* IE6-9 fallback on horizontal gradient */
 }
 
+#topbar {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.95rem;
+    color: #fff;
+    height: 3rem;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 3rem;
+}
+
+
+input, input:focus, input:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    height: 2.3rem;
+    border-radius: 3px;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+input::placeholder {
+    color: #bbb;
+}
+input.email-input {
+    width: 18rem;
+}
+
+button {
+    border-radius: 3px;
+    background-color: #d7d6ff;
+    color: #6b6cbc;
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+    padding: 0 1.25rem;
+    border: none;
+    box-shadow: none;
+    height: 2.3rem;
+    vertical-align: bottom;
+    display: inline-block;
+    cursor: pointer;
+    filter: opacity(100%);
+    transition: all .25s ease;
+}
+
+button:hover {
+    background-color: #ebebff;
+    transition: all .25s ease;
+}
+
+// invite
+
+.invite-form-container {
+    top: calc(50vh - 22rem);
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    width: 34rem;
+}
+.template-name {
+    color: #fff;
+    padding: 0rem 0 3rem 0;
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+.selected-template-text {
+    color: #fff;
+    opacity: .75;
+    padding: 3rem 0 .5rem 0;
+    font-size: 1.35rem;
+    font-weight: 300;
+}
+.invite-input-text {
+    color: #fff;
+    opacity: .75;
+    padding: 2rem 0;
+    font-size: 1.35rem;
+    font-weight: 300;
+}
+
+
+// modules
+#modules-container {
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+}
