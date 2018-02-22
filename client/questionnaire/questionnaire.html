@@ -2,15 +2,31 @@
 
   <div class="questionnaire-container">
 
-    {{#each questions}} 
-    
+
     <div class="question-item">
-        
-      {{text}} 
+      <div class="question-text">
+        {{questiontext}}
+      </div>
+      {{#if range}}
+      <form class="invite-form">
+        <input type="text" class="input questionnaire-input" placeholder="Bitte Wert eingeben">
+      </form>
+      {{else}}
+        xxx
+    
+      {{/if}}
+      <div class="navigation-buttons">
+        <button class="previous-question">previous</button>
+        <button class="next-question">next</button>
+      </div>
 
     </div>
-    
-    {{/each}}
+    <div class="finish-questionnaire-modal">
+        [Text - Fragenkatalog fertig - weiter zum Bewerten]
+        <button class="continue-to-scoring">Proceed</button>
+      </div>
+
+
 
   </div>
 

@@ -10,6 +10,7 @@ body,
     font-size: 100%;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    outline: none !important;
 }
 
 #fullscreen_container {
@@ -83,11 +84,16 @@ button {
     cursor: pointer;
     filter: opacity(100%);
     transition: all .25s ease;
+    outline: none;
+    user-select: none;
 }
 
 button:hover {
     background-color: #ebebff;
     transition: all .25s ease;
+}
+button:focus {
+    outline: none;
 }
 
 // invite
@@ -223,3 +229,84 @@ button:hover {
 
 // questionnaire
 
+.questionnaire-container {
+    max-width: 100%;
+    height: auto;
+    padding: 3rem;
+    width: 40rem;
+    margin: 5rem auto 0 auto;
+    position: relative;
+}
+
+.question-item {
+    position: relative;
+    background-color: rgba(255,255,255,.35);
+    border-radius: 3px;
+    padding: 3rem 3rem 2rem 3rem;
+    margin: 2px;
+    min-height: 10rem;
+    height: auto;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.2);
+}
+
+.question-text {
+    font-size: 1.75rem;
+    color: rgba(0,0,0,0.6);
+    font-weight: 500;
+    pointer-events: none;
+}
+.questionnaire-input {
+    // margin-top: 2rem;
+    margin: 1.5rem 0 2rem 0;
+    width: calc(100% - 2rem);
+}
+.navigation-buttons {
+    height: 3rem;
+    margin: 2rem 0 0 0;
+}
+button.previous-question {
+    float: left;
+}
+
+button.next-question {
+    float: right;
+}
+
+.finish-questionnaire-modal {
+    opacity: 0;
+    transition: all .2s ease;
+    z-index: 9999;
+    pointer-events: none;
+    font-size: 1.75rem;
+    color: rgba(0,0,0,0.6);
+    font-weight: 500;
+    position: absolute;
+    width: 34rem;
+    top: 2.5rem;
+    left: 2.5rem;
+    min-height: 10rem;
+    padding: 3rem 3rem 7rem 3rem;
+    height: auto;
+}
+
+.finish-questionnaire-modal.show {
+
+    opacity: 1;
+    transition: all .2s ease;
+    pointer-events: all;
+    z-index: 9999;
+    background-color: rgba(255,255,255,.35);
+    border-radius: 3px;
+    margin: 2px;
+    cursor: pointer;
+    transition: all .25s ease;
+    box-shadow: 0px 0px 25px rgba(0,0,0,0.2);
+}
+
+button.continue-to-scoring {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
