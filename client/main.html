@@ -1,0 +1,29 @@
+<head>
+  <title>hackathon</title>
+</head>
+
+<body>
+</body>
+
+<template name="layout">
+  {{> Template.dynamic template=top}}
+  {{> Template.dynamic template=main}}
+</template>
+
+<template name="header">
+  <h1>Legal Tech Hackathon 2018</h1>
+</template>
+
+<template name="index">
+  {{> loginButtons}}
+</template>
+
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
