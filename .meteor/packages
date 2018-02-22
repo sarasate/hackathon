@@ -32,3 +32,4 @@ kadira:flow-router@2.12.1
 
 accounts-password@1.5.0
 accounts-ui@1.3.0
+kadira:blaze-layout
