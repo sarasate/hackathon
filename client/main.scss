@@ -356,13 +356,13 @@ button.thumbs-icon.selected {
 	height: auto;
 	padding: 3rem;
 	width: 70rem;
-	margin: 5rem auto 0 auto;
+	margin: 3rem auto 0 auto;
 	position: relative;
 }
 
 
 .module-item.scoring-item {
-    padding: 2rem 4rem 2rem 1rem;
+    padding: 2.5rem 4.5rem 2.5rem 1.5rem;
     position: relative;
     pointer-events: none;
     cursor: default;
@@ -405,14 +405,14 @@ button.thumbs-icon.selected {
     transition: all .25s ease;   
 }
 .plus-button {
-    margin: 0 auto 0.35rem auto;
+    margin: 0 auto 0.75rem auto;
 }
 input.score-input {
     height: 1.5rem;
     width: 2.5rem;
     padding: .25rem;
     pointer-events: all;
-    margin: 0 auto 0.35rem auto;
+    margin: 0 auto 0.75rem auto;
     background-color: rgba(255,255,255,.5);
     transition: all .25s ease;   
 }
@@ -420,4 +420,17 @@ input.score-input {
 input.score-input:focus {
     background-color: #fff;
     transition: all .25s ease;   
+}
+
+.scoring-counter {
+    font-size: 2rem;
+    color: #4f4662;
+    /* margin-top: 0rem; */
+    width: 6rem;
+    margin: 0 auto;
+
+}
+
+.scoring-select-text {
+    padding-top: 2rem;
 }
