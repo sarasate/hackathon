@@ -54,7 +54,7 @@ Template.scoring.events({
     if (scoreCount === maxCount) return;
 
     Session.set("scoreCount", scoreCount + 1);
-    Answers.update(answerId, { $set: { weight: 1 } });
+    Answers.update(answerId, { $inc: { weight: 1 } });
   },
   "click .minus-button": event => {
     const answerId = event.target.id;
