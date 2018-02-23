@@ -104,11 +104,13 @@ Template.scoring.events({
 
     console.log(proposal);
 
-    const bucket = bucketize(param, proposal.disent);
+    const buckets = bucketize(param, proposal.disent);
 
-    console.log(bucket);
+    console.log(buckets);
 
-    Consensus.insert(proposal.consent);
-    Buckets.insert(bucket);
+    buckets.forEach(bucket => {
+      Consensus.insert(bucket);
+    });
+    // Buckets.insert(bucket);
   }
 });
