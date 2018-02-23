@@ -87,7 +87,7 @@ const runFixtures = function() {
     { _id: "asdf10" },
     {
       questionId: "asD4dT",
-      value: 3,
+      value: "3",
       weight: 1,
       user: "john",
       caseId: "DQiwKn"
@@ -99,7 +99,7 @@ const runFixtures = function() {
     { _id: "asdf11" },
     {
       questionId: "0Zu8d3",
-      value: 4,
+      value: "4",
       weight: 1,
       user: "john",
       caseId: "DQiwKn"
@@ -123,7 +123,7 @@ const runFixtures = function() {
     { _id: "asdf13" },
     {
       questionId: "ACZ24d",
-      value: 100,
+      value: "100",
       weight: 0,
       user: "john",
       caseId: "DQiwKn"
@@ -147,7 +147,7 @@ const runFixtures = function() {
     { _id: "asdf15" },
     {
       questionId: "hE34Rz",
-      value: 200000,
+      value: "200000",
       weight: 0,
       user: "john",
       caseId: "DQiwKn"
