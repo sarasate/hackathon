@@ -19,10 +19,10 @@ Template.scoring.helpers({
       questionId: _id,
       user: Session.get("user")
     });
-    const thisValue = answer.value;
-    if (thisValue == true) {
+    const thisValue = answer.value.toString();
+    if (thisValue === true) {
       return "ACCEPT";
-    } else if (thisValue == false) {
+    } else if (thisValue === false) {
       return "DECLINE";
     } else {
       return thisValue;
