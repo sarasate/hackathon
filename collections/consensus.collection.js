@@ -1,0 +1,1 @@
+Consensus = new Mongo.Collection("consensus");

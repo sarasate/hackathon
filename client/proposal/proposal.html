@@ -1,0 +1,81 @@
+<template name="proposal">
+
+	<div class="proposal-container">
+
+		<!-- {{#each consensus}} -->
+
+		{{> consensus}}
+
+		<!-- {{/each}} -->
+
+		<div class="finish-questionnaire-modal finish-proposal-modal">
+			[Text - Fragenkatalog fertig - weiter zum Bewerten]
+			<button class="continue-to-result">Proceed</button>
+		</div>
+
+	</div>
+
+</template>
+
+
+<template name="consensus">
+
+		<div class="consensus">
+
+				<!-- {{#each thisItems}} -->
+				<div class="consensus-item">
+					<div class="question-text consensus-question-text">
+						{{questionText}}
+
+						Fragentext
+					</div>
+					<div class="consensus-answer">
+						{{consensusAnswer}}
+						Konsens-Vorschlag
+					</div>
+				</div>
+
+				<div class="consensus-item">
+						<div class="question-text consensus-question-text">
+							{{questionText}}
+	
+							Fragentext
+						</div>
+						<div class="consensus-answer">
+							{{consensusAnswer}}
+							Konsens-Vorschlag
+						</div>
+					</div>
+
+					<div class="consensus-item">
+							<div class="question-text consensus-question-text">
+								{{questionText}}
+		
+								Fragentext
+							</div>
+							<div class="consensus-answer">
+								{{consensusAnswer}}
+								Konsens-Vorschlag
+							</div>
+						</div>
+				<!-- {{/each}} -->
+	
+				<div class="thumbs-container">
+						<button class="thumbs-up thumbs-icon">
+							<img src="/up.svg" alt="">
+						</button>
+		
+						<button class="thumbs-down thumbs-icon">
+							<i class="icon">
+								<img src="/down.svg" alt="">
+							</i>
+						</button>
+		
+					</div>
+					<div class="navigation-buttons proposal-navigation">
+							<button class="previous-question">previous</button>
+							<button class="next-question">next</button>
+						</div>
+			</div>
+
+</template>

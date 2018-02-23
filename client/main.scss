@@ -192,7 +192,7 @@ button:focus {
 	font-size: 1.25rem;
 	background-color: #dcdfff;
 	color: #68689b;
-	border-radius: 3px;
+	border-radius: 10px;
 	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 	opacity: 0;
 	pointer-events: none;
@@ -247,7 +247,7 @@ button:focus {
 .question-item {
 	position: relative;
 	background-color: rgba(255, 255, 255, 0.35);
-	border-radius: 3px;
+	border-radius: 10px;
 	padding: 3rem 3rem 2rem 3rem;
 	margin: 2px;
 	min-height: 10rem;
@@ -303,7 +303,7 @@ button.next-question {
 	pointer-events: all;
 	z-index: 9999;
 	background-color: rgba(255, 255, 255, 0.35);
-	border-radius: 3px;
+	border-radius: 10px;
 	margin: 2px;
 	cursor: pointer;
 	transition: all 0.25s ease;
@@ -327,6 +327,11 @@ button.thumbs-icon {
 	cursor: pointer;
 	height: 4rem;
 	width: 4rem;
+	transition: all 0.25s ease;
+}
+button.thumbs-icon:hover {
+	background: rgba(255, 255, 255, 0.65);
+	transition: all 0.25s ease;
 }
 
 button.thumbs-up {
@@ -360,78 +365,110 @@ button.thumbs-icon.selected {
 	position: relative;
 }
 
-
 .module-item.scoring-item {
-    padding: 2.5rem 4.5rem 2.5rem 1.5rem;
-    position: relative;
-    pointer-events: none;
-    cursor: default;
+	padding: 2.5rem 4.5rem 2.5rem 1.5rem;
+	position: relative;
+	pointer-events: none;
+	cursor: default;
 }
 
 .module-item.scoring-item:hover {
-    background-color: rgba(255, 255, 255, 0.35);
+	background-color: rgba(255, 255, 255, 0.35);
 }
 
 .score-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 3.5rem;
-    height: 100%;
-    text-align: center;
-    padding: .6rem .5rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 3.5rem;
+	height: 100%;
+	text-align: center;
+	padding: 0.6rem 0.5rem;
 }
 
 .score-button {
-    color: #4f4763;
-    border: 1px solid rgba(79, 71, 99, 0.22);
-    pointer-events: all;
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
-    // background-color: rgba(255,255,255,.4);
-    vertical-align: middle;
-    font-weight: 700;
-    font-size: 1.45rem;
-    margin: 0 auto;
-    transition: all .25s ease;   
+	color: #4f4763;
+	border: 1px solid rgba(79, 71, 99, 0.22);
+	pointer-events: all;
+	cursor: pointer;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 100%;
+	// background-color: rgba(255,255,255,.4);
+	vertical-align: middle;
+	font-weight: 700;
+	font-size: 1.45rem;
+	margin: 0 auto;
+	transition: all 0.25s ease;
 }
 .score-button:hover {
-    background-color: rgba(255,255,255,.55);
-    transition: all .25s ease;   
+	background-color: rgba(255, 255, 255, 0.55);
+	transition: all 0.25s ease;
 }
 .plus-button {
-    margin: 0 auto 0.75rem auto;
+	margin: 0 auto 0.75rem auto;
 }
 input.score-input {
-    height: 1.5rem;
-    width: 2.5rem;
-    padding: .25rem;
-    pointer-events: all;
-    margin: 0 auto 0.75rem auto;
-    background-color: rgba(255,255,255,.5);
-    transition: all .25s ease;   
+	height: 1.5rem;
+	width: 2.5rem;
+	padding: 0.25rem;
+	pointer-events: all;
+	margin: 0 auto 0.75rem auto;
+	background-color: rgba(255, 255, 255, 0.5);
+	transition: all 0.25s ease;
+	text-align: center;
 }
 
 input.score-input:focus {
-    background-color: #fff;
-    transition: all .25s ease;   
+	background-color: #fff;
+	transition: all 0.25s ease;
 }
 
 .scoring-counter {
-    font-size: 4rem;
-    color: rgba(218, 221, 253, 0.58);
-    /* margin-top: 0rem; */
-    width: 13rem;
-    font-weight: 400;
-    margin: 0 auto;
-
+	font-size: 4rem;
+	color: rgba(218, 221, 253, 0.58);
+	/* margin-top: 0rem; */
+	width: 13rem;
+	font-weight: 400;
+	margin: 0 auto;
 }
 
 .scoring-select-text {
-    padding-top: 2rem;
+	padding-top: 2rem;
+}
+
+.proposal-container {
+	max-width: 100%;
+	height: auto;
+	padding: 3rem;
+	width: 40rem;
+	margin: 5rem auto 0 auto;
+	position: relative;
+}
+
+.consensus {
+	background-color: rgba(255, 255, 255, 0.3);
+	padding: 3rem 4rem 1rem 4rem;
+	border-radius: 10px;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+.consensus-item {
+	margin: 1rem 0;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.consensus-question-text {
+	color: rgba(0,0,0,0.45);
+}
+
+.consensus-answer {
+	color: rgba(0,0,0,0.75);
+}
+.navigation-buttons.proposal-navigation {
+	margin-top: 3rem;
 }
