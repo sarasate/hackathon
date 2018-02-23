@@ -6,7 +6,7 @@
           [Text zur Punktevergabe]
         </div>
         <div class="modules-list">
-    
+
           {{#each questions}}
     
           <div class="module-item scoring-item">
@@ -14,7 +14,7 @@
               {{text}}
             </div>
             <div class="module-description">
-              {{answer}}
+              {{answer _id}} {{unit}}
             </div>
 
             <div class="score-box">
@@ -22,11 +22,11 @@
               <input type="" class="score-input">
               <div class="minus-button score-button">-</div>
             </div>
-    
+
           </div>
-    
+
           {{/each}}
-    
+
         </div>
         <button class="module-selected-button">Confirm selection</button>
 
