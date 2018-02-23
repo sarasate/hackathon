@@ -2,7 +2,7 @@
 
   <div class="scoring-container">
       <div class="scoring-counter">
-        34/100
+        {{scoreCount}}/{{maxCount}}
       </div>
       <div class="modules-select-text scoring-select-text">
           [Text zur Punktevergabe]
@@ -19,10 +19,10 @@
               {{answer _id}} {{unit}}
             </div>
 
-            <div class="score-box">
-              <div class="plus-button score-button">+</div>
+            <div class="score-box" id={{answerId _id}}>
+              <div class="plus-button score-button" id={{answerId _id}}>+</div>
               <input type="number" class="score-input" value={{weight _id}}>
-              <div class="minus-button score-button">-</div>
+              <div class="minus-button score-button" id={{answerId _id}}>-</div>
             </div>
 
           </div>
@@ -36,7 +36,7 @@
             <div class="waiting-for-other-party">
               Please wait until the other party is ready<span class="dot-one">.</span><span class="dot-two">.</span><span class="dot-three">.</span>
             </div>
-      
+
           </div>
 
   </div>
