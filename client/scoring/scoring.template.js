@@ -20,6 +20,8 @@ Template.scoring.helpers({
   },
   weight: _id => {
     const answer = Answers.findOne({ questionId: _id });
+    console.log(_id);
+    console.log(answer);
     return get(answer, "weight");
   },
   answerId: _id => {
@@ -61,7 +63,7 @@ Template.scoring.events({
     const thisUser = Session.get("user");
     setTimeout(function() {
       FlowRouter.go("/proposal/" + thisCase + "/" + thisUser);
-    }, 10000);
+    }, 5000);
 
     //   Import mediation
 

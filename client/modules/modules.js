@@ -45,7 +45,7 @@ Template.modules.events({
 		const thisUser = Session.get('user');
 		setTimeout(function() {
 					FlowRouter.go('/questionnaire/' + thisCase + '/' + thisUser);
-		}, 10000);
+		}, 5000);
 
 	}
 })
