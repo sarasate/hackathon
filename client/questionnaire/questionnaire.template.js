@@ -73,7 +73,8 @@ Template.questionnaire.events({
       user: thisUser,
       caseId: thisCase,
       value: value,
-      questionId: questionId
+      questionId: questionId,
+      weight: 1
     });
   }
 });
