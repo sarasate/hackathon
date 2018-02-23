@@ -9,7 +9,7 @@ Template.proposal.onRendered(function () {
           $(".waiting-for-other-party").addClass("show");
           SetTimeout(function () {
             FlowRouter.go('/summary/' + thisCase + '/' + thisUser);
-          }, 7000);
+          }, 5000);
         }
       });
 })
@@ -36,6 +36,7 @@ Template.thisConsensus.helpers({
     },
     questionText: function () {
         const thisQuestion = Questions.findOne({_id: this.questionId});
+        console.log(this)
         return thisQuestion.text;
     },
     consensusAnswer: function () {
