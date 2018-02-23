@@ -15,17 +15,26 @@ Template.scoring.helpers({
     return (questionsArray = Questions.find().fetch());
   },
   answer: _id => {
-    const answer = Answers.findOne({ questionId: _id });
+    const answer = Answers.findOne({
+      questionId: _id,
+      user: Session.get("user")
+    });
     return get(answer, "value");
   },
   weight: _id => {
-    const answer = Answers.findOne({ questionId: _id });
+    const answer = Answers.findOne({
+      questionId: _id,
+      user: Session.get("user")
+    });
     console.log(_id);
     console.log(answer);
     return get(answer, "weight");
   },
   answerId: _id => {
-    const answer = Answers.findOne({ questionId: _id });
+    const answer = Answers.findOne({
+      questionId: _id,
+      user: Session.get("user")
+    });
     return get(answer, "_id");
   },
   maxCount: () => {
@@ -45,7 +54,7 @@ Template.scoring.events({
     if (scoreCount === maxCount) return;
 
     Session.set("scoreCount", scoreCount + 1);
-    Answers.update(answerId, { $inc: { weight: 1 } });
+    Answers.update(answerId, { $set: { weight: 1 } });
   },
   "click .minus-button": event => {
     const answerId = event.target.id;
@@ -90,11 +99,11 @@ Template.scoring.events({
 
     console.log(proposal);
 
-    const bucket = bucketize(param, proposal);
+    const bucket = bucketize(param, proposal.disent);
 
     console.log(bucket);
 
-    Consensus.insert(proposal);
+    Consensus.insert(proposal.consent);
     Buckets.insert(bucket);
   }
 });
