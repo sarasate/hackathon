@@ -45,8 +45,7 @@ const runFixtures = function() {
   Questions.upsert(
     { _id: "ACZ24d" },
     {
-      text:
-        'How much more than the statutory amount should John pay?',
+      text: "How much more than the statutory amount should John pay?",
       type: "range",
       unit: "Euro",
       template: "DIVORCE"
@@ -88,7 +87,7 @@ const runFixtures = function() {
     {
       questionId: "asD4dT",
       value: "3",
-      weight: 2,
+      weight: 6,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -100,7 +99,7 @@ const runFixtures = function() {
     {
       questionId: "0Zu8d3",
       value: "4",
-      weight: 2,
+      weight: 5,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -112,7 +111,7 @@ const runFixtures = function() {
     {
       questionId: "8z7UTS",
       value: false,
-      weight: 1,
+      weight: 3,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -124,7 +123,7 @@ const runFixtures = function() {
     {
       questionId: "ACZ24d",
       value: "100",
-      weight: 0,
+      weight: 1,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -136,7 +135,7 @@ const runFixtures = function() {
     {
       questionId: "Bn76tR",
       value: true,
-      weight: 1,
+      weight: 2,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -148,7 +147,7 @@ const runFixtures = function() {
     {
       questionId: "hE34Rz",
       value: "200000",
-      weight: 0,
+      weight: 3,
       user: "john",
       caseId: "DQiwKn"
     }
