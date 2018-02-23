@@ -44,9 +44,9 @@ Template.thisConsensus.helpers({
   consensusAnswer: function() {
     const thisValue = this.value;
     if (thisValue === true) {
-      return "ACCEPT";
+      return "YES";
     } else if (thisValue === false) {
-      return "DECLINE";
+      return "NO";
     } else {
       return thisValue;
     }
