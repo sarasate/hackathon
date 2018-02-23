@@ -67,6 +67,7 @@ Template.thisConsensus.events({
     let counter = Session.get("consensusCount");
     counter++;
     Session.set("consensusCount", counter);
+    $(".selected").removeClass("selected");
     // $(".questionnaire-input").val("");
   },
   "click .previous-question": function() {

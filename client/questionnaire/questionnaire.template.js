@@ -35,6 +35,7 @@ Template.questionnaire.onRendered(function() {
 Template.questionnaire.events({
 	'click .next-question': function() {
 		$('form.question-form').submit();
+    $(".selected").removeClass("selected");
 		let counter = Session.get('questionsCount');
 		counter++;
 		Session.set('questionsCount', counter);
