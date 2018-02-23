@@ -46,7 +46,7 @@ const runFixtures = function() {
     { _id: "ACZ24d" },
     {
       text:
-        'How much more than the statutory amount of the "Düsseldorfer Tabelle" should John pay?',
+        'How much more than the statutory amount should John pay?',
       type: "range",
       unit: "Euro",
       template: "DIVORCE"
