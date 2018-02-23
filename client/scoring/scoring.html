@@ -10,7 +10,7 @@
         <div class="modules-list">
 
           {{#each questions}}
-    
+
           <div class="module-item scoring-item">
             <div class="module-name">
               {{text}}
@@ -21,7 +21,7 @@
 
             <div class="score-box">
               <div class="plus-button score-button">+</div>
-              <input type="" class="score-input">
+              <input type="number" class="score-input" value={{weight _id}}>
               <div class="minus-button score-button">-</div>
             </div>
 
