@@ -1,4 +1,5 @@
 import { get } from "lodash";
+import { propose, bucketize } from "/imports/mediation/index";
 
 Template.scoring.onRendered(function() {
   this.autorun(function() {
@@ -61,5 +62,8 @@ Template.scoring.events({
     setTimeout(function() {
       FlowRouter.go("/proposal/" + thisCase + "/" + thisUser);
     }, 10000);
+
+    //   Import mediation
+    console.log(propose({ black: [], white: [] }));
   }
 });
