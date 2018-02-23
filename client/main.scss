@@ -355,7 +355,69 @@ button.thumbs-icon.selected {
 	max-width: 100%;
 	height: auto;
 	padding: 3rem;
-	width: 40rem;
+	width: 70rem;
 	margin: 5rem auto 0 auto;
 	position: relative;
+}
+
+
+.module-item.scoring-item {
+    padding: 2rem 4rem 2rem 1rem;
+    position: relative;
+    pointer-events: none;
+    cursor: default;
+}
+
+.module-item.scoring-item:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.score-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3.5rem;
+    height: 100%;
+    text-align: center;
+    padding: .6rem .5rem;
+}
+
+.score-button {
+    color: #4f4763;
+    border: 1px solid rgba(79, 71, 99, 0.22);
+    pointer-events: all;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    // background-color: rgba(255,255,255,.4);
+    vertical-align: middle;
+    font-weight: 700;
+    font-size: 1.45rem;
+    margin: 0 auto;
+    transition: all .25s ease;   
+}
+.score-button:hover {
+    background-color: rgba(255,255,255,.55);
+    transition: all .25s ease;   
+}
+.plus-button {
+    margin: 0 auto 0.35rem auto;
+}
+input.score-input {
+    height: 1.5rem;
+    width: 2.5rem;
+    padding: .25rem;
+    pointer-events: all;
+    margin: 0 auto 0.35rem auto;
+    background-color: rgba(255,255,255,.5);
+    transition: all .25s ease;   
+}
+
+input.score-input:focus {
+    background-color: #fff;
+    transition: all .25s ease;   
 }
