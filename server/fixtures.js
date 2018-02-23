@@ -88,7 +88,7 @@ const runFixtures = function() {
     {
       questionId: "asD4dT",
       value: "3",
-      weight: 1,
+      weight: 2,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -100,7 +100,7 @@ const runFixtures = function() {
     {
       questionId: "0Zu8d3",
       value: "4",
-      weight: 1,
+      weight: 2,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -112,7 +112,7 @@ const runFixtures = function() {
     {
       questionId: "8z7UTS",
       value: false,
-      weight: 0.5,
+      weight: 1,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -136,7 +136,7 @@ const runFixtures = function() {
     {
       questionId: "Bn76tR",
       value: true,
-      weight: 0.5,
+      weight: 1,
       user: "john",
       caseId: "DQiwKn"
     }
@@ -160,14 +160,14 @@ const runFixtures = function() {
     {
       questionId: "WuKjX2",
       value: false,
-      weight: 0.5,
+      weight: 1,
       user: "john",
       caseId: "DQiwKn"
     }
   );
 
   Cases.upsert(
-    { _id: "DQiwKn" },
+    { _id: "divorce" },
     {
       user1: "linda",
       user2: "john",
