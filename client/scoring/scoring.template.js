@@ -19,15 +19,20 @@ Template.scoring.helpers({
       questionId: _id,
       user: Session.get("user")
     });
-    return get(answer, "value");
+    const thisValue = answer.value;
+    if (thisValue == true) {
+      return "ACCEPT";
+    } else if (thisValue == false) {
+      return "DECLINE";
+    } else {
+      return thisValue;
+    }
   },
   weight: _id => {
     const answer = Answers.findOne({
       questionId: _id,
       user: Session.get("user")
     });
-    console.log(_id);
-    console.log(answer);
     return get(answer, "weight");
   },
   answerId: _id => {
