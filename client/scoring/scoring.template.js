@@ -64,6 +64,35 @@ Template.scoring.events({
     }, 10000);
 
     //   Import mediation
-    console.log(propose({ black: [], white: [] }));
+
+    console.log(thisCase);
+
+    const user1 = Cases.findOne({ _id: thisCase }).user1;
+    const user2 = Cases.findOne({ _id: thisCase }).user2;
+
+    const answersBlack = Answers.find({ user: user1 }).fetch();
+    const answersWhite = Answers.find({ user: user2 }).fetch();
+
+    answersBlack.map(answer => {
+      answer.id = answer.questionId;
+    });
+
+    answersWhite.map(answer => {
+      answer.id = answer.questionId;
+    });
+
+    console.log(answersBlack);
+
+    const param = { black: answersBlack, white: answersWhite };
+    const proposal = propose(param);
+
+    console.log(proposal);
+
+    const bucket = bucketize(param, proposal);
+
+    console.log(bucket);
+
+    Consensus.insert(proposal);
+    Buckets.insert(bucket);
   }
 });

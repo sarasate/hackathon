@@ -83,8 +83,8 @@ function propose(initial, consensus) {
     return results;
 }
 exports.propose = propose;
+// assume proposal is cleared from equal positions
 function bucketize(initial, proposal) {
-    // todo: strip euqal positions
     var initialBlack = initial.black;
     var initialWhite = initial.white;
     var black = lodash_1["default"]
