@@ -22,7 +22,7 @@ const runFixtures = function() {
   Questions.upsert(
     { _id: "asD4dT" },
     {
-      text: "How many days is John allowed to see the child every two weeks?",
+      text: "How many days should John be allowed to see the child every two weeks?",
       type: "range",
       unit: "days",
       template: "DIVORCE"
@@ -32,7 +32,7 @@ const runFixtures = function() {
   Questions.upsert(
     { _id: "0Zu8d3" },
     {
-      text: "How many weeks per year is John allowed to make holidays together with the child?",
+      text: "How many weeks per year should John be allowed to make holidays together with the child?",
       type: "range",
       unit: "weeks",
       template: "DIVORCE"
@@ -68,7 +68,7 @@ const runFixtures = function() {
   Questions.upsert(
     { _id: "hE34Rz" },
     {
-      text: "What is the total amount of the compensation Linda has to pay for the marital home?",
+      text: "What is the total amount of the compensation Linda should pay for the marital home?",
       type: "range",
       unit: "Euro",
       template: "DIVORCE"
