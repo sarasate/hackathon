@@ -42,7 +42,7 @@ Template.thisConsensus.helpers({
     return thisQuestion.text;
   },
   consensusAnswer: function() {
-    const thisValue = this.value.toString();
+    const thisValue = this.value;
     if (thisValue === true) {
       return "ACCEPT";
     } else if (thisValue === false) {

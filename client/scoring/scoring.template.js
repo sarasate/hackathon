@@ -19,7 +19,8 @@ Template.scoring.helpers({
       questionId: _id,
       user: Session.get("user")
     });
-    const thisValue = answer.value.toString();
+    console.log(answer.value)
+    const thisValue = answer.value;
     if (thisValue === true) {
       return "ACCEPT";
     } else if (thisValue === false) {
