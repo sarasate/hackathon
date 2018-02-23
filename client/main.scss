@@ -543,8 +543,9 @@ input.score-input:focus {
 }
 
 .retry-text {
+	font-size: 1.35rem;
 	margin: .75rem 0;
-	color: #554886;
+	color: rgba(255,255,255,0.5);
 }
 
 .retry-button {
@@ -552,6 +553,7 @@ input.score-input:focus {
 }
 
 .consult-text {
+	font-size: 1.35rem;
 	margin: .75rem 0;
-	color: #554886;
+	color: rgba(255,255,255,0.5);
 }
