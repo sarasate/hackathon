@@ -61,6 +61,7 @@ Template.questionnaire.events({
     const thisCase = Session.get("case");
 
     const value = event.target.value.value;
+    $(".questionnaire-input").val("");
 
     Answers.insert({ user: thisUser, caseId: thisCase, value: value });
   }
