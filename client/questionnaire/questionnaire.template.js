@@ -55,14 +55,25 @@ Template.questionnaire.events({
     FlowRouter.go("/scoring/" + thisCase + "/" + thisUser);
   },
   "submit .question-form": event => {
+    console.log(event);
     event.preventDefault();
 
     const thisUser = Session.get("user");
     const thisCase = Session.get("case");
 
+    const questionId = Questions.find().fetch()[Session.get("questionsCount")]
+      ._id;
+
     const value = event.target.value.value;
     $(".questionnaire-input").val("");
 
-    Answers.insert({ user: thisUser, caseId: thisCase, value: value });
+    if (value === "") return;
+
+    Answers.insert({
+      user: thisUser,
+      caseId: thisCase,
+      value: value,
+      questionId: questionId
+    });
   }
 });
