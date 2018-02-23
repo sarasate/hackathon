@@ -1,25 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,700');
 
-html,
-body,
-#__blaze-root {
+
+html {
 	height: 100%;
-	width: 100%;
-	padding: 0;
-	margin: 0;
 	font-size: 100%;
 	box-sizing: border-box;
 	font-family: 'Roboto', sans-serif;
 	outline: none !important;
 }
-
-#fullscreen_container {
-	position: relative;
-	height: 100%;
+html,
+body,
+#__blaze-root {
 	width: 100%;
+	padding: 0;
+	margin: 0;
 
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b885f7+0,759df9+100 */
+}
+body {
+	height: 100%;
 	background: #b885f7; /* Old browsers */
 	background: -moz-linear-gradient(
 		-45deg,
@@ -41,6 +40,35 @@ body,
 			endColorstr='#759df9',
 			GradientType=1
 		); /* IE6-9 fallback on horizontal gradient */
+}
+
+#fullscreen_container {
+	position: relative;
+	height: 100%;
+	width: 100%;	
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b885f7+0,759df9+100 */
+	// background: #b885f7; /* Old browsers */
+	// background: -moz-linear-gradient(
+	// 	-45deg,
+	// 	#b885f7 0%,
+	// 	#759df9 100%
+	// ); /* FF3.6-15 */
+	// background: -webkit-linear-gradient(
+	// 	-45deg,
+	// 	#b885f7 0%,
+	// 	#759df9 100%
+	// ); /* Chrome10-25,Safari5.1-6 */
+	// background: linear-gradient(
+	// 	135deg,
+	// 	#b885f7 0%,
+	// 	#759df9 100%
+	// ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	// filter: progid:DXImageTransform.Microsoft.gradient(
+	// 		startColorstr='#b885f7',
+	// 		endColorstr='#759df9',
+	// 		GradientType=1
+	// 	); /* IE6-9 fallback on horizontal gradient */
 }
 
 #topbar {
@@ -322,7 +350,7 @@ button.continue-to-scoring {
 	cursor: default;
 }
 button.thumbs-icon {
-	background: rgba(255, 255, 255, 0.5);
+	background: rgba(255, 255, 255, 0.25);
 	border-radius: 100%;
 	cursor: pointer;
 	height: 4rem;
@@ -357,7 +385,7 @@ button.thumbs-icon.selected {
 
 // scoring
 .scoring-container {
-	max-width: 100%;
+	max-width: 90%;
 	height: auto;
 	padding: 3rem;
 	width: 70rem;
@@ -441,7 +469,7 @@ input.score-input:focus {
 }
 
 .proposal-container {
-	max-width: 100%;
+	max-width: 90%;
 	height: auto;
 	padding: 3rem;
 	width: 40rem;
@@ -464,10 +492,16 @@ input.score-input:focus {
 
 .consensus-question-text {
 	color: rgba(0,0,0,0.45);
+	font-weight: 400;
+	font-size: 1.35rem;
 }
 
 .consensus-answer {
-	color: rgba(0,0,0,0.75);
+	color: rgba(49, 41, 83, 0.66);
+	font-style: italic;
+	margin-top: .5rem;
+	font-size: 1.85rem;
+	font-weight: 700;
 }
 .navigation-buttons.proposal-navigation {
 	margin-top: 3rem;

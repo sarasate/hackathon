@@ -1,26 +1,26 @@
 const modules = [
+	{name: "Child Custody",
+	description: "Description of module" 
+	},
 	{name: "Child Support",
 	description: "Description of module" 
 	},
 	{name: "Spousel Support",
 	description: "Description of module" 
 	},
-	{name: "Division Of Property",
-	description: "Description of module" 
-	},
-	{name: "Marital Home",
+	{name: "Division of Property",
 	description: "Description of module" 
 	},
 	{name: "Household Effects",
 	description: "Description of module" 
 	},
-	{name: "Equalization Of Surplus",
+	{name: "Taxes",
 	description: "Description of module" 
 	},
-	{name: "Pension Rights Adjustment",
+	{name: "Last Will",
 	description: "Description of module" 
 	}, 
-	{name: "Last Will",
+	{name: "Equalization of Surplus",
 	description: "Description of module" 
 	}
 ]

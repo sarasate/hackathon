@@ -1,64 +1,39 @@
 <template name="proposal">
+		<div class="please-wait-modal">
 
+				<div class="waiting-for-other-party">
+					Please wait until the other party is ready<span class="dot-one">.</span><span class="dot-two">.</span><span class="dot-three">.</span>
+				</div>
+	
+			</div>
 	<div class="proposal-container">
 
 		<!-- {{#each consensus}} -->
 
-		{{> consensus}}
+		{{> thisConsensus}}
 
 		<!-- {{/each}} -->
 
-		<div class="finish-questionnaire-modal finish-proposal-modal">
-			[Text - Fragenkatalog fertig - weiter zum Bewerten]
-			<button class="continue-to-result">Proceed</button>
-		</div>
 
 	</div>
 
 </template>
 
 
-<template name="consensus">
+<template name="thisConsensus">
 
 		<div class="consensus">
-
-				<!-- {{#each thisItems}} -->
+				{{#each thisItems}}
 				<div class="consensus-item">
 					<div class="question-text consensus-question-text">
 						{{questionText}}
-
-						Fragentext
 					</div>
 					<div class="consensus-answer">
-						{{consensusAnswer}}
-						Konsens-Vorschlag
+						{{consensusAnswer}} {{unit}}
 					</div>
 				</div>
 
-				<div class="consensus-item">
-						<div class="question-text consensus-question-text">
-							{{questionText}}
-	
-							Fragentext
-						</div>
-						<div class="consensus-answer">
-							{{consensusAnswer}}
-							Konsens-Vorschlag
-						</div>
-					</div>
-
-					<div class="consensus-item">
-							<div class="question-text consensus-question-text">
-								{{questionText}}
-		
-								Fragentext
-							</div>
-							<div class="consensus-answer">
-								{{consensusAnswer}}
-								Konsens-Vorschlag
-							</div>
-						</div>
-				<!-- {{/each}} -->
+				{{/each}}
 	
 				<div class="thumbs-container">
 						<button class="thumbs-up thumbs-icon">
