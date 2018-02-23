@@ -423,10 +423,11 @@ input.score-input:focus {
 }
 
 .scoring-counter {
-    font-size: 2rem;
-    color: #4f4662;
+    font-size: 4rem;
+    color: rgba(218, 221, 253, 0.58);
     /* margin-top: 0rem; */
-    width: 6rem;
+    width: 13rem;
+    font-weight: 400;
     margin: 0 auto;
 
 }
