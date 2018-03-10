@@ -1,0 +1,8 @@
+{
+  "galaxy.meteor.com": { 
+     "env": { 
+       "MONGO_URL": "mongodb://sondier_admin:divorcehacking69@ds263948.mlab.com:63948/sondier_mongodb" 
+     } 
+   }
+}
+
