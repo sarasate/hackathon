@@ -9,7 +9,7 @@ Template.invite.events({
       email1: target.email1.value,
       user2: target.username2.value,
       email2: target.email2.value,
-      template: DIVORCE
+      template: "DIVORCE"
     };
 
     const issueId = Cases.insert(issue);
