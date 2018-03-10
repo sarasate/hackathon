@@ -8,7 +8,8 @@ Template.invite.events({
       user1: target.username1.value,
       email1: target.email1.value,
       user2: target.username2.value,
-      email2: target.email2.value
+      email2: target.email2.value,
+      template: DIVORCE
     };
 
     const issueId = Cases.insert(issue);
