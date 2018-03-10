@@ -2,7 +2,9 @@ let counter = 0;
 Template.proposal.onRendered(function() {
   Session.set("consensusCount", 0);
   this.autorun(function() {
-    const numberOfConsensus = Consensus.find().fetch().length;
+    const numberOfConsensus = Consensus.find({
+      caseId: Session.get("case")
+    }).fetch().length;
     const count = Session.get("consensusCount");
     const thisCase = Session.get("case");
     const thisUser = Session.get("user");
@@ -19,7 +21,9 @@ Template.proposal.onRendered(function() {
 Template.thisConsensus.helpers({
   thisItems: function() {
     let counter = Session.get("consensusCount");
-    const consensusArray = Consensus.find().fetch();
+    const consensusArray = Consensus.find({
+      caseId: Session.get("case")
+    }).fetch();
     const thisConsensus = consensusArray[counter];
     if (!thisConsensus) {
       return;

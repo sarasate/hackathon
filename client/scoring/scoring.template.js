@@ -98,13 +98,11 @@ Template.scoring.events({
 
     //   Import mediation
 
-    console.log(thisCase);
-
-    const user1 = Cases.findOne({ _id: thisCase }).user1;
-    const user2 = Cases.findOne({ _id: thisCase }).user2;
+    const user1 = Cases.findOne({ _id: thisCase }).email1;
+    const user2 = Cases.findOne({ _id: thisCase }).email2;
 
     const answersBlack = Answers.find({ user: user1 }).fetch();
-    const answersWhite = Answers.find({ user: user2 }).fetch();
+    const answersWhite = Answers.find({ user: "dummy" }).fetch();
 
     answersBlack.map(answer => {
       answer.id = answer.questionId;
@@ -114,18 +112,16 @@ Template.scoring.events({
       answer.id = answer.questionId;
     });
 
-    console.log(answersBlack);
-
     const param = { black: answersBlack, white: answersWhite };
     const proposal = propose(param);
-
-    console.log(proposal);
 
     const buckets = bucketize(param, proposal.disent);
 
     console.log(buckets);
 
     buckets.forEach(bucket => {
+      //Add case id to bucket
+      bucket.caseId = Session.get("case");
       Consensus.insert(bucket);
     });
     // Buckets.insert(bucket);
