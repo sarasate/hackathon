@@ -81,4 +81,6 @@ Template.modules.onRendered(function() {
   const thisUser = FlowRouter.getParam("user");
   Session.set("user", thisUser);
   Session.set("case", thisCase);
+
+  Cases.update(thisCase, { $set: { selectedModules: [] } });
 });

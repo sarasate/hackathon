@@ -7,7 +7,7 @@ const runFixtures = function() {
   //     unit: "Euro",
   //     lowerBound: "0",
   //     upperBound: "1000",
-  //     template: "DIVORCE"
+  //     template: "DIVORCE",      moduleId:0
   //   }
   // );
 
@@ -19,7 +19,9 @@ const runFixtures = function() {
         "How many days should John be allowed to see the child every two weeks?",
       type: "range",
       unit: "days",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 0,
+      moduleId: 0
     }
   );
 
@@ -30,7 +32,9 @@ const runFixtures = function() {
         "How many weeks per year should John be allowed to make holidays together with the child?",
       type: "range",
       unit: "weeks",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 0,
+      moduleId: 0
     }
   );
 
@@ -38,7 +42,9 @@ const runFixtures = function() {
     { _id: "8z7UTS" },
     {
       text: "Should John pay the health insurance coverage for the child?",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 0,
+      moduleId: 0
     }
   );
 
@@ -48,7 +54,8 @@ const runFixtures = function() {
       text: "How much more than the statutory amount should John pay?",
       type: "range",
       unit: "Euro",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 0
     }
   );
 
@@ -56,7 +63,8 @@ const runFixtures = function() {
     { _id: "Bn76tR" },
     {
       text: "Should John keep the car?",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 1
     }
   );
 
@@ -67,7 +75,8 @@ const runFixtures = function() {
         "What is the total amount of the compensation Linda should pay for the marital home?",
       type: "range",
       unit: "Euro",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 2
     }
   );
 
@@ -75,7 +84,8 @@ const runFixtures = function() {
     { _id: "WuKjX2" },
     {
       text: "Should Linda receive tax refunds?",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 3
     }
   );
 
@@ -170,7 +180,8 @@ const runFixtures = function() {
     {
       user1: "linda",
       user2: "john",
-      template: "DIVORCE"
+      template: "DIVORCE",
+      moduleId: 0
     }
   );
 };
