@@ -20,7 +20,6 @@ const runFixtures = function() {
       type: "range",
       unit: "days",
       template: "DIVORCE",
-      moduleId: 0,
       moduleId: 0
     }
   );
@@ -34,7 +33,6 @@ const runFixtures = function() {
       type: "range",
       unit: "weeks",
       template: "DIVORCE",
-      moduleId: 0,
       moduleId: 0
     }
   );
@@ -45,7 +43,6 @@ const runFixtures = function() {
     {
       text: "Should John pay the health insurance coverage for the child?",
       template: "DIVORCE",
-      moduleId: 0,
       moduleId: 0
     }
   );
@@ -95,12 +92,11 @@ const runFixtures = function() {
     }
   );
 
-  // Q8  -   3 more dummy questions 
+  // Q8  -   3 more dummy questions
   Questions.upsert(
     { _id: "jfd8i7" },
     {
-      text:
-        "DUMMY question 08 / module 2?",
+      text: "DUMMY question 08 / module 2?",
       type: "range",
       unit: "USD",
       template: "DIVORCE",
@@ -118,7 +114,7 @@ const runFixtures = function() {
     }
   );
 
-  // Q10 
+  // Q10
   Questions.upsert(
     { _id: "hJk87t" },
     {
@@ -127,7 +123,6 @@ const runFixtures = function() {
       moduleId: 4
     }
   );
-
 
   // ANSWERS
 
@@ -215,43 +210,42 @@ const runFixtures = function() {
     }
   );
 
-// A8 - dummy 
-Answers.upsert(
-  { _id: "answer08" },
-  {
-    questionId: "jfd8i7",
-    value: "80",
-    weight: 3,
-    user: "dummy",
-    caseId: "DQiwKn"
-  }
-);
+  // A8 - dummy
+  Answers.upsert(
+    { _id: "answer08" },
+    {
+      questionId: "jfd8i7",
+      value: "80",
+      weight: 3,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
 
-// A09 - dummy 
-Answers.upsert(
-  { _id: "answer09" },
-  {
-    questionId: "Zud6k8",
-    value: false,
-    weight: 2,
-    user: "dummy",
-    caseId: "DQiwKn"
-  }
-);
+  // A09 - dummy
+  Answers.upsert(
+    { _id: "answer09" },
+    {
+      questionId: "Zud6k8",
+      value: false,
+      weight: 2,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
 
-// A10 - dummy 
-Answers.upsert(
-  { _id: "answer10" },
-  {
-    questionId: "hJk87t",
-    value: false,
-    weight: 4,
-    user: "dummy",
-    caseId: "DQiwKn"
-  }
-);
-
-
+  // A10 - dummy
+  Answers.upsert(
+    { _id: "answer10" },
+    {
+      questionId: "hJk87t",
+      value: false,
+      weight: 4,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+};
 
 Meteor.startup(() => {
   runFixtures();
