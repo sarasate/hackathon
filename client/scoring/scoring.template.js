@@ -23,15 +23,18 @@ Template.scoring.helpers({
     if (!issue) return;
     console.log(issue);
     Session.get("case");
-    return (questionsArray = Questions.find({
+    const questionsArray = Questions.find({
       $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
       // caseId: Session.get("case")
-    }).fetch());
+    }).fetch();
+    console.log(questionsArray);
+    return questionsArray;
   },
   answer: _id => {
     const answer = Answers.findOne({
       questionId: _id,
-      user: Session.get("user")
+      user: Session.get("user"),
+      caseId: Session.get("case")
     });
     console.log(answer.value);
     const thisValue = answer.value;

@@ -78,8 +78,12 @@ Template.questionnaire.events({
     const thisUser = Session.get("user");
     const thisCase = Session.get("case");
 
-    const questionId = Questions.find().fetch()[Session.get("questionsCount")]
-      ._id;
+    const issue = Cases.findOne(Session.get("case"));
+    if (!issue) return;
+
+    const questionId = Questions.find({
+      $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+    }).fetch()[Session.get("questionsCount")]._id;
 
     const value = event.target.value.value;
     $(".questionnaire-input").val("");
@@ -97,8 +101,13 @@ Template.questionnaire.events({
   "click .thumbs-up": function() {
     const thisUser = Session.get("user");
     const thisCase = Session.get("case");
-    const questionId = Questions.find().fetch()[Session.get("questionsCount")]
-      ._id;
+
+    const issue = Cases.findOne(Session.get("case"));
+    if (!issue) return;
+
+    const questionId = Questions.find({
+      $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+    }).fetch()[Session.get("questionsCount")]._id;
 
     const value = true;
     Answers.insert({
@@ -112,8 +121,12 @@ Template.questionnaire.events({
   "click .thumbs-down": function() {
     const thisUser = Session.get("user");
     const thisCase = Session.get("case");
-    const questionId = Questions.find().fetch()[Session.get("questionsCount")]
-      ._id;
+    const issue = Cases.findOne(Session.get("case"));
+    if (!issue) return;
+
+    const questionId = Questions.find({
+      $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+    }).fetch()[Session.get("questionsCount")]._id;
 
     const value = false;
     Answers.insert({
