@@ -4,14 +4,14 @@ const runFixtures = function() {
   //   {
   //     text: "Wieviel Unterhalt soll gezahlt werden?",
   //     type: "range",
-  //     unit: "Euro",
+  //     unit: "USD",
   //     lowerBound: "0",
   //     upperBound: "1000",
   //     template: "DIVORCE",      moduleId:0
   //   }
   // );
 
-  // QUESTIONS
+  // Q1
   Questions.upsert(
     { _id: "asD4dT" },
     {
@@ -25,6 +25,7 @@ const runFixtures = function() {
     }
   );
 
+  // Q2
   Questions.upsert(
     { _id: "0Zu8d3" },
     {
@@ -38,6 +39,7 @@ const runFixtures = function() {
     }
   );
 
+  // Q3
   Questions.upsert(
     { _id: "8z7UTS" },
     {
@@ -48,143 +50,208 @@ const runFixtures = function() {
     }
   );
 
+  // Q4
   Questions.upsert(
     { _id: "ACZ24d" },
     {
       text: "How much more than the statutory amount should John pay?",
       type: "range",
-      unit: "Euro",
+      unit: "USD",
       template: "DIVORCE",
       moduleId: 0
     }
   );
 
+  // Q5
   Questions.upsert(
     { _id: "Bn76tR" },
     {
       text: "Should John keep the car?",
       template: "DIVORCE",
-      moduleId: 1
+      moduleId: 0
     }
   );
 
+  // Q6
   Questions.upsert(
     { _id: "hE34Rz" },
     {
       text:
         "What is the total amount of the compensation Linda should pay for the marital home?",
       type: "range",
-      unit: "Euro",
+      unit: "USD",
+      template: "DIVORCE",
+      moduleId: 0
+    }
+  );
+
+  // Q7
+  Questions.upsert(
+    { _id: "WuKjX2" },
+    {
+      text: "Should Linda receive tax refunds? (module 1)",
+      template: "DIVORCE",
+      moduleId: 1
+    }
+  );
+
+  // Q8  -   3 more dummy questions 
+  Questions.upsert(
+    { _id: "jfd8i7" },
+    {
+      text:
+        "DUMMY question 08 / module 2?",
+      type: "range",
+      unit: "USD",
       template: "DIVORCE",
       moduleId: 2
     }
   );
 
+  // Q9
   Questions.upsert(
-    { _id: "WuKjX2" },
+    { _id: "Zud6k8" },
     {
-      text: "Should Linda receive tax refunds?",
+      text: "DUMMY question 09 DUMMY module 3",
       template: "DIVORCE",
       moduleId: 3
     }
   );
 
+  // Q10 
+  Questions.upsert(
+    { _id: "hJk87t" },
+    {
+      text: "DUMMY question 10 DUMMY module 4?",
+      template: "DIVORCE",
+      moduleId: 4
+    }
+  );
+
+
   // ANSWERS
 
-  // How many days should John be allowed to see the child every two weeks?
+  // A1 How many days should John be allowed to see the child every two weeks?
   Answers.upsert(
     { _id: "asdf10" },
     {
       questionId: "asD4dT",
       value: "3",
       weight: 6,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // How many weeks per year should John be allowed to make holidays together with the child?
+  // A2 How many weeks per year should John be allowed to make holidays together with the child?
   Answers.upsert(
     { _id: "asdf11" },
     {
       questionId: "0Zu8d3",
       value: "4",
       weight: 5,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // Should John pay the health insurance coverage for the child?
+  // A3 Should John pay the health insurance coverage for the child?
   Answers.upsert(
     { _id: "asdf12" },
     {
       questionId: "8z7UTS",
       value: false,
       weight: 3,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // How much more than the statutory amount of the \"Düsseldorfer Tabelle\" should John pay?
+  // A4 How much more than the statutory amount of the \"Düsseldorfer Tabelle\" should John pay?
   Answers.upsert(
     { _id: "asdf13" },
     {
       questionId: "ACZ24d",
       value: "100",
       weight: 1,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // Should John keep the car?
+  // A5 Should John keep the car?
   Answers.upsert(
     { _id: "asdf14" },
     {
       questionId: "Bn76tR",
       value: true,
       weight: 2,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // What is the total amount of the compensation Linda should pay for the marital home?
+  // A6 What is the total amount of the compensation Linda should pay for the marital home?
   Answers.upsert(
     { _id: "asdf15" },
     {
       questionId: "hE34Rz",
       value: "200000",
       weight: 3,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // Should Linda receive tax refunds?
+  // A7 Should Linda receive tax refunds?
   Answers.upsert(
     { _id: "asdf16" },
     {
       questionId: "WuKjX2",
       value: false,
       weight: 1,
-      user: "john",
+      user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  Cases.upsert(
-    { _id: "divorce" },
-    {
-      user1: "linda",
-      user2: "john",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-};
+// A8 - dummy 
+Answers.upsert(
+  { _id: "answer08" },
+  {
+    questionId: "jfd8i7",
+    value: "80",
+    weight: 3,
+    user: "dummy",
+    caseId: "DQiwKn"
+  }
+);
+
+// A09 - dummy 
+Answers.upsert(
+  { _id: "answer09" },
+  {
+    questionId: "Zud6k8",
+    value: false,
+    weight: 2,
+    user: "dummy",
+    caseId: "DQiwKn"
+  }
+);
+
+// A10 - dummy 
+Answers.upsert(
+  { _id: "answer10" },
+  {
+    questionId: "hJk87t",
+    value: false,
+    weight: 4,
+    user: "dummy",
+    caseId: "DQiwKn"
+  }
+);
+
+
 
 Meteor.startup(() => {
   runFixtures();
