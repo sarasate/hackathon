@@ -67,6 +67,10 @@ Template.thisConsensus.helpers({
 
 Template.thisConsensus.events({
   "click .next-question": function() {
+    if(!$('.thumbs-icon').hasClass('selected')) { 
+      alert('Please accept or decline this consensus proposal.');
+      return; 
+    }
     $("form.question-form").submit();
     let counter = Session.get("consensusCount");
     counter++;
