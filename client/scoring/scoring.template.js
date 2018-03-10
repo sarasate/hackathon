@@ -119,6 +119,10 @@ Template.scoring.events({
 
     console.log(buckets);
 
+    Consensus.find({ caseId: Session.get("case") }).forEach(function(doc) {
+      Consensus.remove({ _id: doc._id });
+    });
+
     buckets.forEach(bucket => {
       //Add case id to bucket
       bucket.caseId = Session.get("case");
