@@ -98,11 +98,22 @@ Template.scoring.events({
 
     //   Import mediation
 
-    const user1 = Cases.findOne({ _id: thisCase }).email1;
-    const user2 = Cases.findOne({ _id: thisCase }).email2;
+    const issue = Cases.findOne({ _id: thisCase });
+
+    const user1 = issue.email1;
+
+    const enabledQuestions = Questions.find({
+      $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+    }).fetch();
+
+    const questionIds = enabledQuestions.map(question => question._id);
 
     const answersBlack = Answers.find({ user: user1 }).fetch();
-    const answersWhite = Answers.find({ user: "dummy" }).fetch();
+
+    const answersWhite = Answers.find({
+      user: "dummy",
+      questionId: { $in: questionIds }
+    }).fetch();
 
     answersBlack.map(answer => {
       answer.id = answer.questionId;
