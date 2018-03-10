@@ -46,14 +46,16 @@ Template.scoring.helpers({
   weight: _id => {
     const answer = Answers.findOne({
       questionId: _id,
-      user: Session.get("user")
+      user: Session.get("user"),
+      caseId: Session.get("case")
     });
     return get(answer, "weight");
   },
   answerId: _id => {
     const answer = Answers.findOne({
       questionId: _id,
-      user: Session.get("user")
+      user: Session.get("user"),
+      caseId: Session.get("case")
     });
     return get(answer, "_id");
   },
