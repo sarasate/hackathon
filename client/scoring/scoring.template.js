@@ -3,8 +3,15 @@ import { propose, bucketize } from "/imports/mediation/index";
 
 Template.scoring.onRendered(function() {
   this.autorun(function() {
-    const maxCount = Questions.find().fetch().length * 3;
-    const scoreCount = Questions.find().fetch().length;
+    const issue = Cases.findOne(Session.get("case"));
+    if (!issue) return;
+    const maxCount =
+      Questions.find({
+        $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+      }).fetch().length * 3;
+    const scoreCount = Questions.find({
+      $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+    }).fetch().length;
     Session.set("maxCount", maxCount);
     Session.set("scoreCount", scoreCount);
   });
@@ -12,14 +19,21 @@ Template.scoring.onRendered(function() {
 
 Template.scoring.helpers({
   questions: () => {
-    return (questionsArray = Questions.find().fetch());
+    const issue = Cases.findOne(Session.get("case"));
+    if (!issue) return;
+    console.log(issue);
+    Session.get("case");
+    return (questionsArray = Questions.find({
+      $or: [{ moduleId: 0 }, { moduleId: { $in: issue.selectedModules } }]
+      // caseId: Session.get("case")
+    }).fetch());
   },
   answer: _id => {
     const answer = Answers.findOne({
       questionId: _id,
       user: Session.get("user")
     });
-    console.log(answer.value)
+    console.log(answer.value);
     const thisValue = answer.value;
     if (thisValue === true) {
       return "ACCEPT";

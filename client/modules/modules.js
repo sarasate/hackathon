@@ -56,10 +56,12 @@ Template.modules.events({
     console.log(id);
 
     if ($(target).hasClass("selected")) {
-      Cases.update(Session.get("case"), { $pull: { selectedModules: id } });
+      Cases.update(Session.get("case"), {
+        $pull: { selectedModules: parseInt(id) }
+      });
     } else
       Cases.update(Session.get("case"), {
-        $addToSet: { selectedModules: id }
+        $addToSet: { selectedModules: parseInt(id) }
       });
 
     $(event.target).toggleClass("selected");
