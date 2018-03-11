@@ -1,5 +1,5 @@
 import { get } from "lodash";
-import { propose, bucketize } from "/imports/mediation/index";
+import { propose, bucketize } from "sondier-mediation";
 
 Template.scoring.onRendered(function() {
   this.autorun(function() {
@@ -129,7 +129,7 @@ Template.scoring.events({
     const param = { black: answersBlack, white: answersWhite };
     const proposal = propose(param);
 
-    const buckets = bucketize(param, proposal.disent);
+    const buckets = bucketize(param, proposal.dissent);
 
     console.log(buckets);
 

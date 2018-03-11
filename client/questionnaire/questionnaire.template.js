@@ -77,9 +77,10 @@ Template.questionnaire.events({
       _id: questionId
     });
     const actualQuestionType = actualQuestion.type;
+    console.log(actualQuestionType); 
     // if no questiontype exists (thumbs-up/-down-question) and no answer selected -> return, else counter++ and show next question   
     if (!actualQuestionType) {
-      if (!$('.thumbs-icon').hasClass('selected')) {
+      if (!$('.thumbs-icon').hasClass('selected')) { 
         alert('Please select an answer.');
         return;
       } else {

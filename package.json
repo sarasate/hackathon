@@ -10,6 +10,7 @@
     "bcrypt": "^1.0.3",
     "lodash": "^4.17.5",
     "meteor-node-stubs": "^0.3.2",
-    "moment": "^2.20.1"
+    "moment": "^2.20.1",
+    "sondier-mediation": "git+https://github.com/davidlinner/sondier-mediation.git"
   }
 }
