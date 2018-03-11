@@ -94,9 +94,9 @@ const runFixtures = function() {
 
   // Q8  -   3 more dummy questions
   Questions.upsert(
-    { _id: "jfd8i7" },
+    { _id: "zTik5d" },
     {
-      text: "DUMMY question 08 / module 2?",
+      text: "DUMMY question 08 module 2?",
       type: "range",
       unit: "USD",
       template: "DIVORCE",
@@ -210,12 +210,12 @@ const runFixtures = function() {
     }
   );
 
-  // A8 - dummy
+  // A8 - dummy (range question)
   Answers.upsert(
     { _id: "answer08" },
     {
-      questionId: "jfd8i7",
-      value: "80",
+      questionId: "zTik5d",
+      value: "60000",
       weight: 3,
       user: "dummy",
       caseId: "DQiwKn"
