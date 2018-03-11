@@ -131,7 +131,11 @@ Template.scoring.events({
 
     const consents = bucketize(param, proposal.consent);
 
-    consents.map(consent => (consent.approved = true));
+    consents.map(consent => {
+      consent.approved = true;
+      consent.initial = true;
+      return consent;
+    });
     console.log(consents);
 
     const buckets = bucketize(param, proposal.dissent);
