@@ -16,6 +16,34 @@ Template.proposal.onRendered(function() {
       setTimeout(function() {
         FlowRouter.go("/summary/" + thisCase + "/" + thisUser);
       }, 5000);
+
+      //   Calculate result
+      const buckets = Consensus.find({ caseId: Session.get("case") }).fetch();
+
+      let approvedCount = 0;
+      let totalCount = 0;
+      let result = 0;
+      buckets.map(bucket => {
+        const bucketCount = Math.max(bucket.black.length, bucket.white.length);
+        console.log(bucketCount);
+        if (bucket.approved === true) {
+          totalCount = totalCount + bucketCount;
+          approvedCount = approvedCount + bucketCount;
+        } else if (bucket.approved === false) {
+          totalCount = totalCount + bucketCount;
+        }
+      });
+
+      result = approvedCount / totalCount;
+
+      const newResult = Results.findOne({ caseId: Session.get("case") });
+
+      if (newResult)
+        Results.upsert(newResult._id, {
+          caseId: Session.get("case"),
+          value: result
+        });
+      else Results.insert({ caseId: Session.get("case"), value: result });
     }
   });
 });
