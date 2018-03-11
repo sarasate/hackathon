@@ -4,7 +4,7 @@ Template.proposal.onRendered(function() {
   this.autorun(function() {
     const numberOfConsensus = Consensus.find({
       caseId: Session.get("case"),
-      approved: { $ne: true }
+      initial: { $ne: true }
     }).fetch().length;
     const count = Session.get("consensusCount");
     const thisCase = Session.get("case");
@@ -25,7 +25,7 @@ Template.thisConsensus.helpers({
     let counter = Session.get("consensusCount");
     const consensusArray = Consensus.find({
       caseId: Session.get("case"),
-      approved: { $ne: true }
+      initial: { $ne: true }
     }).fetch();
     const thisConsensus = consensusArray[counter];
     if (!thisConsensus) {
@@ -88,7 +88,19 @@ Template.thisConsensus.events({
   },
   "click .thumbs-icon": function(event) {
     console.log(event);
+    const dissentId = Consensus.find({
+      caseId: Session.get("case"),
+      initial: { $ne: true }
+    }).fetch()[Session.get("consensusCount")]._id;
+
     $(".selected").removeClass("selected");
     $(event.target).toggleClass("selected");
+    if ($(event.target).hasClass("thumbs-up")) {
+      Consensus.update(dissentId, { $set: { approved: true } });
+    }
+    if ($(event.target).hasClass("thumbs-down")) {
+      console.log(dissentId);
+      Consensus.update(dissentId, { $set: { approved: false } });
+    }
   }
 });
