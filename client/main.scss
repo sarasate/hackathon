@@ -226,10 +226,10 @@ button:focus {
   margin: 3rem 1rem 0 0;
 }
 
-.modules-list >  div:nth-child(5),
-.modules-list >  div:nth-child(6),
-.modules-list >  div:nth-child(7),
-.modules-list >  div:nth-child(8) {
+#modules-container .modules-list >  div:nth-child(5),
+#modules-container .modules-list >  div:nth-child(6),
+#modules-container .modules-list >  div:nth-child(7),
+#modules-container .modules-list >  div:nth-child(8) {
   pointer-events: none; 
   opacity: 0.45; 
 }
