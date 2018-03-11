@@ -129,6 +129,11 @@ Template.scoring.events({
     const param = { black: answersBlack, white: answersWhite };
     const proposal = propose(param);
 
+    const consents = bucketize(param, proposal.consent);
+
+    consents.map(consent => (consent.approved = true));
+    console.log(consents);
+
     const buckets = bucketize(param, proposal.dissent);
 
     console.log(buckets);
@@ -137,7 +142,7 @@ Template.scoring.events({
       Consensus.remove({ _id: doc._id });
     });
 
-    buckets.forEach(bucket => {
+    [...buckets, ...consents].forEach(bucket => {
       //Add case id to bucket
       bucket.caseId = Session.get("case");
       Consensus.insert(bucket);

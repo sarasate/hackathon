@@ -3,7 +3,8 @@ Template.proposal.onRendered(function() {
   Session.set("consensusCount", 0);
   this.autorun(function() {
     const numberOfConsensus = Consensus.find({
-      caseId: Session.get("case")
+      caseId: Session.get("case"),
+      approved: { $ne: true }
     }).fetch().length;
     const count = Session.get("consensusCount");
     const thisCase = Session.get("case");
@@ -11,6 +12,7 @@ Template.proposal.onRendered(function() {
     if (count !== 0 && count === numberOfConsensus) {
       $(".consensus").hide();
       $(".waiting-for-other-party").addClass("show");
+
       setTimeout(function() {
         FlowRouter.go("/summary/" + thisCase + "/" + thisUser);
       }, 5000);
@@ -22,7 +24,8 @@ Template.thisConsensus.helpers({
   thisItems: function() {
     let counter = Session.get("consensusCount");
     const consensusArray = Consensus.find({
-      caseId: Session.get("case")
+      caseId: Session.get("case"),
+      approved: { $ne: true }
     }).fetch();
     const thisConsensus = consensusArray[counter];
     if (!thisConsensus) {
@@ -67,9 +70,9 @@ Template.thisConsensus.helpers({
 
 Template.thisConsensus.events({
   "click .next-question": function() {
-    if(!$('.thumbs-icon').hasClass('selected')) { 
-      alert('Please accept or decline this consensus proposal.');
-      return; 
+    if (!$(".thumbs-icon").hasClass("selected")) {
+      alert("Please accept or decline this consensus proposal.");
+      return;
     }
     $("form.question-form").submit();
     let counter = Session.get("consensusCount");
@@ -84,6 +87,7 @@ Template.thisConsensus.events({
     Session.set("consensusCount", counter);
   },
   "click .thumbs-icon": function(event) {
+    console.log(event);
     $(".selected").removeClass("selected");
     $(event.target).toggleClass("selected");
   }
