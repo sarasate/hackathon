@@ -216,13 +216,22 @@ button:focus {
 }
 
 .module-description {
-  color: rgba(0, 0, 0, 0.7);
+  // color: rgba(0, 0, 0, 0.7);
+  color: #6e6e97;
   pointer-events: none;
   font-weight: 300;
 }
 
 .module-selected-button {
   margin: 3rem 1rem 0 0;
+}
+
+.modules-list >  div:nth-child(5),
+.modules-list >  div:nth-child(6),
+.modules-list >  div:nth-child(7),
+.modules-list >  div:nth-child(8) {
+  pointer-events: none; 
+  opacity: 0.45; 
 }
 
 .waiting-for-other-party {

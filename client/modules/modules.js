@@ -1,43 +1,44 @@
 const modules = [
   {
     name: "Child Custody",
-    // description: "Description of module",
+    description: "Description of module",
     id: 1
   },
   {
     name: "Child Maintenance",
+    description: "Description of module",
     id: 2
   },
   {
     name: "Division of Property",
+    description: "Description of module",
     id: 3
   },
   {
     name: "Pay-off",
+    description: "Description of module",
     id: 4
+  },
+  {
+    name: "Household Effects",
+    description: "Description of module",
+    id: 5
+  },
+  {
+    name: "Spousel Maintenance",
+    description: "Description of module",
+    id: 6
+  },
+  {
+    name: "Last Will",
+    description: "Description of module",
+    id: 7
+  },
+  {
+    name: "Equalization of Surplus",
+    description: "Description of module",
+    id: 8
   }
-  
-  // ,
-  // {
-  //   name: "Household Effects",
-  //   description: "Description of module",
-  //   id: 5
-  // },
-  // {
-  //   name: "Spousel Maintenance",
-  //   description: "Description of module",
-  //   id: 6
-  // },
-  // {
-  //   name: "Last Will",
-  //   description: "Description of module",
-  //   id: 7
-  // },
-  // {
-  //   name: "Equalization of Surplus",
-  //   description: "Description of module",
-  //   id: 8
-  // }
 ];
 
 Template.modules.helpers({
