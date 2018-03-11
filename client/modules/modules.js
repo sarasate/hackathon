@@ -13,7 +13,7 @@ const modules = [
     id: 3
   },
   {
-    name: "Pay-Off",
+    name: "Pay-off",
     id: 4
   }
   
