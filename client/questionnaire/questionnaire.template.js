@@ -1,22 +1,23 @@
-import {
-  Template
-} from "meteor/templating";
+import { Template } from "meteor/templating";
 
-Template.questionnaire.onCreated(function () {});
+Template.questionnaire.onCreated(function() {});
 
 Template.questionnaire.helpers({
-  questiontext: function () {
+  questiontext: function() {
     const counter = Session.get("questionsCount");
     const issue = Cases.findOne(Session.get("case"));
     if (issue) {
       const questionsArray = Questions.find({
-        $or: [{
-          moduleId: 0
-        }, {
-          moduleId: {
-            $in: issue.selectedModules
+        $or: [
+          {
+            moduleId: 0
+          },
+          {
+            moduleId: {
+              $in: issue.selectedModules
+            }
           }
-        }]
+        ]
       }).fetch();
       if (questionsArray[counter]) {
         return questionsArray[counter].text;
@@ -28,13 +29,16 @@ Template.questionnaire.helpers({
     const issue = Cases.findOne(Session.get("case"));
     if (issue) {
       const questionsArray = Questions.find({
-        $or: [{
-          moduleId: 0
-        }, {
-          moduleId: {
-            $in: issue.selectedModules
+        $or: [
+          {
+            moduleId: 0
+          },
+          {
+            moduleId: {
+              $in: issue.selectedModules
+            }
           }
-        }]
+        ]
       }).fetch();
       if (questionsArray[counter]) {
         return questionsArray[counter].type === "range";
@@ -43,21 +47,24 @@ Template.questionnaire.helpers({
   }
 });
 
-Template.questionnaire.onCreated(function () {
+Template.questionnaire.onCreated(function() {
   Session.set("questionsCount", 0);
 
-  this.autorun(function () {
+  this.autorun(function() {
     const issue = Cases.findOne(Session.get("case"));
     if (!issue) return;
 
     const numberOfQuestions = Questions.find({
-      $or: [{
-        moduleId: 0
-      }, {
-        moduleId: {
-          $in: issue.selectedModules
+      $or: [
+        {
+          moduleId: 0
+        },
+        {
+          moduleId: {
+            $in: issue.selectedModules
+          }
         }
-      }]
+      ]
     }).fetch().length;
     console.log(numberOfQuestions);
     const count = Session.get("questionsCount");
@@ -69,19 +76,32 @@ Template.questionnaire.onCreated(function () {
 });
 
 Template.questionnaire.events({
-  "click .next-question": function () {
+  "click .next-question": function() {
     // get questionId and find out type of question ('range' or undefined)
-    const questionId = Questions.find().fetch()[Session.get("questionsCount")]
-      ._id;
+    const issue = Cases.findOne(Session.get("case"));
+    if (!issue) return;
+
+    const questionId = Questions.find({
+      $or: [
+        {
+          moduleId: 0
+        },
+        {
+          moduleId: {
+            $in: issue.selectedModules
+          }
+        }
+      ]
+    }).fetch()[Session.get("questionsCount")]._id;
     const actualQuestion = Questions.findOne({
       _id: questionId
     });
     const actualQuestionType = actualQuestion.type;
-    console.log(actualQuestionType); 
-    // if no questiontype exists (thumbs-up/-down-question) and no answer selected -> return, else counter++ and show next question   
+    console.log(actualQuestionType);
+    // if no questiontype exists (thumbs-up/-down-question) and no answer selected -> return, else counter++ and show next question
     if (!actualQuestionType) {
-      if (!$('.thumbs-icon').hasClass('selected')) { 
-        alert('Please select an answer.');
+      if (!$(".thumbs-icon").hasClass("selected")) {
+        alert("Please select an answer.");
         return;
       } else {
         let counter = Session.get("questionsCount");
@@ -93,16 +113,16 @@ Template.questionnaire.events({
     $("form.question-form").submit();
     $(".selected").removeClass("selected");
   },
-  "click .previous-question": function () {
+  "click .previous-question": function() {
     let counter = Session.get("questionsCount");
     counter--;
     Session.set("questionsCount", counter);
   },
-  "click .thumbs-icon": function (event) {
+  "click .thumbs-icon": function(event) {
     $(".selected").removeClass("selected");
     $(event.target).toggleClass("selected");
   },
-  "click .continue-to-scoring": function () {
+  "click .continue-to-scoring": function() {
     const thisCase = Session.get("case");
     const thisUser = Session.get("user");
     FlowRouter.go("/scoring/" + thisCase + "/" + thisUser);
@@ -122,13 +142,13 @@ Template.questionnaire.events({
     const value = event.target.value.value;
     $(".questionnaire-input").val("");
 
-    // if no value entered (in 'range'-question) alert and return 
+    // if no value entered (in 'range'-question) alert and return
     if (value === "") {
-      alert('Please enter value.')
+      alert("Please enter value.");
       return;
     }
 
-    // move counter up and show next question 
+    // move counter up and show next question
     counter++;
     Session.set("questionsCount", counter);
     // $(".questionnaire-input").val("");
@@ -141,7 +161,7 @@ Template.questionnaire.events({
       weight: 1
     });
   },
-  "click .thumbs-up": function () {
+  "click .thumbs-up": function() {
     const thisUser = Session.get("user");
     const thisCase = Session.get("case");
 
@@ -149,13 +169,16 @@ Template.questionnaire.events({
     if (!issue) return;
 
     const questionId = Questions.find({
-      $or: [{
-        moduleId: 0
-      }, {
-        moduleId: {
-          $in: issue.selectedModules
+      $or: [
+        {
+          moduleId: 0
+        },
+        {
+          moduleId: {
+            $in: issue.selectedModules
+          }
         }
-      }]
+      ]
     }).fetch()[Session.get("questionsCount")]._id;
 
     const value = true;
@@ -167,20 +190,23 @@ Template.questionnaire.events({
       weight: 1
     });
   },
-  "click .thumbs-down": function () {
+  "click .thumbs-down": function() {
     const thisUser = Session.get("user");
     const thisCase = Session.get("case");
     const issue = Cases.findOne(Session.get("case"));
     if (!issue) return;
 
     const questionId = Questions.find({
-      $or: [{
-        moduleId: 0
-      }, {
-        moduleId: {
-          $in: issue.selectedModules
+      $or: [
+        {
+          moduleId: 0
+        },
+        {
+          moduleId: {
+            $in: issue.selectedModules
+          }
         }
-      }]
+      ]
     }).fetch()[Session.get("questionsCount")]._id;
 
     const value = false;
