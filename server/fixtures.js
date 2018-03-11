@@ -13,90 +13,45 @@ const runFixtures = function() {
 
   // Q1
   Questions.upsert(
-    { _id: "asD4dT" },
+    { _id: "questionId01" },
     {
       text:
-        "How many days should John be allowed to see the child every two weeks?",
+        "How many days is your spouse allowed to see your child every two weeks?",
       type: "range",
       unit: "days",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-
-  // Q2
-  Questions.upsert(
-    { _id: "0Zu8d3" },
-    {
-      text:
-        "How many weeks per year should John be allowed to make holidays together with the child?",
-      type: "range",
-      unit: "weeks",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-
-  // Q3
-  Questions.upsert(
-    { _id: "8z7UTS" },
-    {
-      text: "Should John pay the health insurance coverage for the child?",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-
-  // Q4
-  Questions.upsert(
-    { _id: "ACZ24d" },
-    {
-      text: "How much more than the statutory amount should John pay?",
-      type: "range",
-      unit: "USD",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-
-  // Q5
-  Questions.upsert(
-    { _id: "Bn76tR" },
-    {
-      text: "Should John keep the car?",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-
-  // Q6
-  Questions.upsert(
-    { _id: "hE34Rz" },
-    {
-      text:
-        "What is the total amount of the compensation Linda should pay for the marital home?",
-      type: "range",
-      unit: "USD",
-      template: "DIVORCE",
-      moduleId: 0
-    }
-  );
-
-  // Q7
-  Questions.upsert(
-    { _id: "WuKjX2" },
-    {
-      text: "Should Linda receive tax refunds? (module 1)",
       template: "DIVORCE",
       moduleId: 1
     }
   );
 
-  // Q8  -   3 more dummy questions
+  // Q2
   Questions.upsert(
-    { _id: "zTik5d" },
+    { _id: "questionId02" },
     {
-      text: "DUMMY question 08 module 2?",
+      text:
+        "Should your spouse pay the health insurance coverage for your child?",
+      template: "DIVORCE",
+      moduleId: 2
+    }
+  );
+
+  // Q3
+  Questions.upsert(
+    { _id: "questionId03" },
+    {
+      text: "What is the total amount of compensation you will pay for the marital home (in USD)?",
+      type: "range",
+      unit: "USD",
+      template: "DIVORCE",
+      moduleId: 3
+    }
+  );
+
+  // Q4
+  Questions.upsert(
+    { _id: "questionId04" },
+    {
+      text: "How much more than the statutory amount should your spouse pay (in USD)?",
       type: "range",
       unit: "USD",
       template: "DIVORCE",
@@ -104,33 +59,91 @@ const runFixtures = function() {
     }
   );
 
-  // Q9
+    // Q5
+    Questions.upsert(
+      { _id: "questionId05" },
+      {
+        text: "Should your spouse pay a dynamic maintenance for your child?",
+        template: "DIVORCE",
+        moduleId: 0
+      }
+    );
+
+
+  // Q6
   Questions.upsert(
-    { _id: "Zud6k8" },
+    { _id: "questionId06" },
     {
-      text: "DUMMY question 09 DUMMY module 3",
+      text:
+        "Should the couple share the child custody?",
       template: "DIVORCE",
-      moduleId: 3
+      moduleId: 0
     }
   );
 
-  // Q10
+  // Q7
   Questions.upsert(
-    { _id: "hJk87t" },
+    { _id: "questionId07" },
     {
-      text: "DUMMY question 10 DUMMY module 4?",
+      text: "Is your spouse under obligation to provide maintenance for your child?",
+      template: "DIVORCE",
+      moduleId: 0
+    }
+  );
+
+  // Q8
+  Questions.upsert(
+    { _id: "questionId08" },
+    {
+      text: "How many weeks per year is your spouse allowed to make holidays together with your child?",
+      type: "range",
+      unit: "weeks",
+      template: "DIVORCE",
+      moduleId: 1
+    }
+  );
+
+  // Q9
+  Questions.upsert(
+    { _id: "questionId09" },
+    {
+      text: "Should your spouse receive tax refunds?",
+      template: "DIVORCE",
+      moduleId: 0
+    }
+  );
+
+    // Q10
+    Questions.upsert(
+      { _id: "questionId10" },
+      {
+        text: "Should your spouse keep the car?",
+        template: "DIVORCE",
+        moduleId: 0
+      }
+    );
+
+      // Q11
+  Questions.upsert(
+    { _id: "questionId11" },
+    {
+      text: "Should your spouse pay a single payment?",
       template: "DIVORCE",
       moduleId: 4
     }
   );
 
+
+
+
+
   // ANSWERS
 
-  // A1 How many days should John be allowed to see the child every two weeks?
+  // A1 How many days is your spouse allowed to see your child every two weeks?
   Answers.upsert(
-    { _id: "asdf10" },
+    { _id: "answerId01" },
     {
-      questionId: "asD4dT",
+      questionId: "questionId01",
       value: "3",
       weight: 6,
       user: "dummy",
@@ -138,11 +151,84 @@ const runFixtures = function() {
     }
   );
 
-  // A2 How many weeks per year should John be allowed to make holidays together with the child?
+  // A2 Should your spouse pay the health insurance coverage for your child?
   Answers.upsert(
-    { _id: "asdf11" },
+    { _id: "answerId02" },
     {
-      questionId: "0Zu8d3",
+      questionId: "questionId02",
+      value: false,
+      weight: 3,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+
+  // A3 "What is the total amount of compensation you will pay for the marital home (in USD)?",
+  Answers.upsert(
+    { _id: "answerId03" },
+    {
+      questionId: "questionId03",
+      value: "167000",
+      // weight: 6, 
+      weight: 14,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+
+  // A4 "How much more than the statutory amount should your spouse pay (in USD)?",
+  Answers.upsert(
+    { _id: "answerId04" },
+    {
+      questionId: "questionId04",
+      value: "200",
+      weight: 1,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+
+  // A5 "Should your spouse pay a dynamic maintenance for your child?",
+  Answers.upsert(
+    { _id: "answerId05" },
+    {
+      questionId: "questionId05",
+      value: false,
+      weight: 1,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+
+  // A6  "Should the couple share the child custody?",
+  Answers.upsert(
+    { _id: "answerId06" },
+    {
+      questionId: "questionId06",
+      value: true,
+      weight: 4,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+
+  // A7 "Is your spouse under obligation to provide maintenance for your child?",
+  Answers.upsert(
+    { _id: "answerId07" },
+    {
+      questionId: "questionId07",
+      value: true,
+      weight: 3,
+      user: "dummy",
+      caseId: "DQiwKn"
+    }
+  );
+
+  // A8 "How many weeks per year is your spouse allowed to make holidays together with your child?",
+  Answers.upsert(
+    { _id: "answerId08" },
+    {
+      questionId: "questionId08",
       value: "4",
       weight: 5,
       user: "dummy",
@@ -150,35 +236,23 @@ const runFixtures = function() {
     }
   );
 
-  // A3 Should John pay the health insurance coverage for the child?
+  // A9 "Should your spouse receive tax refunds?",
   Answers.upsert(
-    { _id: "asdf12" },
+    { _id: "answerId09" },
     {
-      questionId: "8z7UTS",
+      questionId: "questionId09",
       value: false,
-      weight: 3,
-      user: "dummy",
-      caseId: "DQiwKn"
-    }
-  );
-
-  // A4 How much more than the statutory amount of the \"Düsseldorfer Tabelle\" should John pay?
-  Answers.upsert(
-    { _id: "asdf13" },
-    {
-      questionId: "ACZ24d",
-      value: "100",
       weight: 1,
       user: "dummy",
       caseId: "DQiwKn"
     }
   );
 
-  // A5 Should John keep the car?
+  // A10 "Should your spouse keep the car?",
   Answers.upsert(
-    { _id: "asdf14" },
+    { _id: "answerId10" },
     {
-      questionId: "Bn76tR",
+      questionId: "questionId10",
       value: true,
       weight: 2,
       user: "dummy",
@@ -186,66 +260,19 @@ const runFixtures = function() {
     }
   );
 
-  // A6 What is the total amount of the compensation Linda should pay for the marital home?
+  // A11 "Should your spouse pay a single payment?",
   Answers.upsert(
-    { _id: "asdf15" },
+    { _id: "answerId11" },
     {
-      questionId: "hE34Rz",
-      value: "200000",
-      weight: 3,
-      user: "dummy",
-      caseId: "DQiwKn"
-    }
-  );
-
-  // A7 Should Linda receive tax refunds?
-  Answers.upsert(
-    { _id: "asdf16" },
-    {
-      questionId: "WuKjX2",
+      questionId: "questionId11",
       value: false,
       weight: 1,
       user: "dummy",
       caseId: "DQiwKn"
     }
   );
-
-  // A8 - dummy (range question)
-  Answers.upsert(
-    { _id: "answer08" },
-    {
-      questionId: "zTik5d",
-      value: "60000",
-      weight: 3,
-      user: "dummy",
-      caseId: "DQiwKn"
-    }
-  );
-
-  // A09 - dummy
-  Answers.upsert(
-    { _id: "answer09" },
-    {
-      questionId: "Zud6k8",
-      value: false,
-      weight: 2,
-      user: "dummy",
-      caseId: "DQiwKn"
-    }
-  );
-
-  // A10 - dummy
-  Answers.upsert(
-    { _id: "answer10" },
-    {
-      questionId: "hJk87t",
-      value: false,
-      weight: 4,
-      user: "dummy",
-      caseId: "DQiwKn"
-    }
-  );
 };
+
 
 Meteor.startup(() => {
   runFixtures();

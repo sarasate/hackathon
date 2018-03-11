@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Pacifico");
 @import url("https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,700");
-
 html {
   height: 100%;
   font-size: 100%;
@@ -9,6 +8,7 @@ html {
   outline: none !important;
   display: block;
 }
+
 html,
 body,
 #__blaze-root {
@@ -19,36 +19,25 @@ body,
   max-height: 100vh;
   overflow: scroll;
 }
+
 body {
   height: 100%;
-  background: #b885f7; /* Old browsers */
-  background: -moz-linear-gradient(
-    -45deg,
-    #b885f7 0%,
-    #759df9 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    -45deg,
-    #b885f7 0%,
-    #759df9 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    135deg,
-    #b885f7 0%,
-    #759df9 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(
-      startColorstr="#b885f7",
-      endColorstr="#759df9",
-      GradientType=1
-    ); /* IE6-9 fallback on horizontal gradient */
+  background: #b885f7;
+  /* Old browsers */
+  background: -moz-linear-gradient( -45deg, #b885f7 0%, #759df9 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient( -45deg, #b885f7 0%, #759df9 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient( 135deg, #b885f7 0%, #759df9 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#b885f7", endColorstr="#759df9", GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
 }
 
 #fullscreen_container {
   position: relative;
   height: 100%;
   width: 100%;
-
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b885f7+0,759df9+100 */
   // background: #b885f7; /* Old browsers */
   // background: -moz-linear-gradient(
@@ -91,12 +80,13 @@ input:active {
   height: 2.3rem;
   border-radius: 3px;
   padding: 0 1rem;
-  font-size: 1rem;
-  // margin-bottom: 1rem;
+  font-size: 1rem; // margin-bottom: 1rem;
 }
+
 input::placeholder {
   color: #bbb;
 }
+
 input.email-input {
   width: 17.5rem;
 }
@@ -129,12 +119,12 @@ button:hover {
   background-color: #ebebff;
   transition: all 0.25s ease;
 }
+
 button:focus {
   outline: none;
 }
 
 // invite
-
 .invite-form-container {
   top: calc(50vh - 22rem);
   position: relative;
@@ -142,12 +132,14 @@ button:focus {
   display: block;
   width: 34rem;
 }
+
 .template-name {
   color: #fff;
-  padding: 0rem 0 3rem 0;
+  padding: 0rem 0 1.25rem 0;
   font-size: 1.75rem;
   font-weight: 300;
 }
+
 .selected-template-text {
   color: #fff;
   opacity: 0.75;
@@ -155,17 +147,26 @@ button:focus {
   font-size: 1.35rem;
   font-weight: 300;
 }
+
 .invite-input-text {
   color: #fff;
   opacity: 0.75;
-  padding: 2rem 0;
+  padding: 2rem 0 0.5rem 0;
   font-size: 1.35rem;
   font-weight: 300;
 }
 
+.invite-information-text {
+  color: #fff;
+  opacity: 0.75;
+  padding: 0.25rem 0 1.25rem 0;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+
 
 // modules
-
 #modules-container {
   max-width: 100%;
   height: auto;
@@ -192,14 +193,17 @@ button:focus {
   cursor: pointer;
   transition: all 0.25s ease;
 }
+
 .modules-list {
   display: flex;
   flex-wrap: wrap;
 }
+
 .module-item:hover {
   background-color: rgba(255, 255, 255, 0.45);
   transition: all 0.25s ease;
 }
+
 .module-item.selected {
   background-color: rgba(255, 255, 255, 0.65);
   transition: all 0.25s ease;
@@ -210,6 +214,7 @@ button:focus {
   font-weight: 700;
   pointer-events: none;
 }
+
 .module-description {
   color: rgba(0, 0, 0, 0.7);
   pointer-events: none;
@@ -219,6 +224,7 @@ button:focus {
 .module-selected-button {
   margin: 3rem 1rem 0 0;
 }
+
 .waiting-for-other-party {
   position: absolute;
   top: 0rem;
@@ -233,21 +239,25 @@ button:focus {
   opacity: 0;
   pointer-events: none;
 }
+
 .waiting-for-other-party.show {
   opacity: 1;
   top: 6rem;
   transition: all 0.35s ease-out;
 }
+
 .dot-one {
   font-weight: 700;
   font-size: 1.75rem;
   animation: animateDots 1s infinite;
 }
+
 .dot-two {
   font-weight: 700;
   font-size: 1.75rem;
   animation: animateDots 1s infinite 0.25s;
 }
+
 .dot-three {
   font-weight: 700;
   font-size: 1.75rem;
@@ -270,7 +280,6 @@ button:focus {
 }
 
 // questionnaire
-
 .questionnaire-container {
   max-width: 100%;
   height: auto;
@@ -299,15 +308,18 @@ button:focus {
   font-weight: 500;
   pointer-events: none;
 }
+
 .questionnaire-input {
   // margin-top: 2rem;
   margin: 1.5rem 0 2rem 0;
   width: calc(100% - 2rem);
 }
+
 .navigation-buttons {
   height: 3rem;
   margin: 2rem 0 0 0;
 }
+
 button.previous-question {
   float: left;
 }
@@ -351,12 +363,14 @@ button.continue-to-scoring {
   bottom: 3rem;
   right: 3rem;
 }
+
 .thumbs-container {
   width: 100%;
   height: 3rem;
   margin: 2.8rem 0 2rem 0;
   cursor: default;
 }
+
 button.thumbs-icon {
   background: rgba(255, 255, 255, 0.25);
   border-radius: 100%;
@@ -365,6 +379,7 @@ button.thumbs-icon {
   width: 4rem;
   transition: all 0.25s ease;
 }
+
 button.thumbs-icon:hover {
   background: rgba(255, 255, 255, 0.65);
   transition: all 0.25s ease;
@@ -379,13 +394,16 @@ button.thumbs-down {
   float: right;
   margin-right: 10rem;
 }
+
 .thumbs-icon i {
   pointer-events: none;
 }
+
 .thumbs-icon img {
   transform: scale(1.75);
   pointer-events: none;
 }
+
 button.thumbs-icon.selected {
   background: rgba(255, 255, 255, 0.75);
   transition: all 0.2s ease;
@@ -436,8 +454,7 @@ button.thumbs-icon.selected {
   cursor: pointer;
   width: 2rem;
   height: 2rem;
-  border-radius: 100%;
-  // background-color: rgba(255,255,255,.4);
+  border-radius: 100%; // background-color: rgba(255,255,255,.4);
   vertical-align: middle;
   font-weight: 700;
   font-size: 1.45rem;
@@ -445,13 +462,16 @@ button.thumbs-icon.selected {
   transition: all 0.25s ease;
   user-select: none;
 }
+
 .score-button:hover {
   background-color: rgba(255, 255, 255, 0.55);
   transition: all 0.25s ease;
 }
+
 .plus-button {
   margin: 0 auto 0.75rem auto;
 }
+
 input.score-input {
   height: 1.5rem;
   width: 2.5rem;
@@ -516,6 +536,7 @@ input.score-input:focus {
   font-size: 1.85rem;
   font-weight: 700;
 }
+
 .navigation-buttons.proposal-navigation {
   margin-top: 3rem;
 }
@@ -533,6 +554,7 @@ input.score-input:focus {
   font-size: 5rem;
   color: #fff;
 }
+
 .percentage-text {
   font-size: 2rem;
   color: rgba(255, 255, 255, 0.6);
